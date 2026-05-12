@@ -52,22 +52,22 @@ const heading = React.createElement(
 Here React creates an element that describes:
 
 type → "h1"
+
 props → null
+
 content → "Hello World"
+
 the null represents the props object.
 
 Why null?
 
-Because your <h1> has no attributes.
+Because h1 has no attributes.
 
-This:
-
-<h1>Hello World</h1>
-
-has:
 
 no className
+
 no id
+
 no style
 
 So React uses:

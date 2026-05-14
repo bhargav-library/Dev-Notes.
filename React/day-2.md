@@ -16,12 +16,19 @@ What does a CDN store?
 CDNs mainly store:
 
 Images
+
 Videos
+
 CSS files
+
 JavaScript files
+
 Fonts
+
 Website pages
+
 App downloads
+
 
 These are called static assets.
 
@@ -81,8 +88,9 @@ the script, such as making HTTP requests or accessing data.
 
 Q ) What is {} denotes in react?
 
-classes, etc should come under {}. Whenever
-I'm passing inside {}, will go as tag attributes of h1.
+classes should come under {}. Whenever we are
+passing inside {}, will go as tag attributes of h1.
+
 
 What is difference between react.development.js and react.production.js files via CDN?
 
@@ -157,6 +165,8 @@ React removes most developer helper messages.
 ❌ Harder to debug
 
 The code is compressed into very small unreadable lines.
+
+so while developing we can use develop.js to reduce bugs and later when the development is done and the app is ready to push to production we can replace the development link with production link.
 
 I'm passing inside {}, will go as tag attributes of h1.
 📢 NOTE: React will overwrite everything inside "root"

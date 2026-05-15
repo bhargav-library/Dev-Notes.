@@ -21,10 +21,13 @@ Q ) Difference between Library and Framework?
 
 A key difference between the two is Inversion of control. When using a library, the control remains with the developer who tells the application when to call library functions. When using a framework, the control is reversed, which means that the framework tells the developer where code needs to be provided and calls it as it requires.
 
-Emmet:
+Q ) What is Emmet?
 
 Emmet is the essential toolkit for web-developers. It allows us
 to type shortcuts that are then expanded into full-fledged boiler plate code for writing HTML and CSS.
+
+Q ) Difference between React and ReactDOM ?
+
 
 In React there are two different libraries with different responsibilities:
 

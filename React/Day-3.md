@@ -23,7 +23,6 @@ Creating the React Root
 
 A React element is just a JavaScript object that describes what should appear on the screen.
 
-The flow look like this:
 
 The flow look like this :
 
@@ -52,4 +51,4 @@ Visible UI
 
 
 
-eading and display it inside the root container.
+

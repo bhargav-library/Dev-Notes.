@@ -21,13 +21,16 @@ Creating the React Root
 
 <h1>root.render(heading)</h1>
 
-<h1>A React element is just a JavaScript object that describes what should appear on the screen.</h1>
+A React element is just a JavaScript object that describes what should appear on the screen.
+
+The flow look like this:
 
 The flow look like this :
 
 JSX
 
  ↓
+
 React.createElement()
 
  ↓
@@ -43,6 +46,10 @@ ReactDOM.render()
 Real DOM
 
  ↓
+
 Visible UI
 
-This means: Take the React element heading and display it inside the root container.
+
+
+
+eading and display it inside the root container.

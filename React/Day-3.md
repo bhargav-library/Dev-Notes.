@@ -49,6 +49,12 @@ Real DOM
 Visible UI
 
 
+Q) Why It Is Called render?
+
+
+The word render in programming means. To generate and display visual output on the screen.
+
+
 
 
 

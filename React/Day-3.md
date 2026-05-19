@@ -29,6 +29,7 @@ The flow look like this :
 JSX
 
  ↓
+ 
 Babel converts it
 
  ↓ 

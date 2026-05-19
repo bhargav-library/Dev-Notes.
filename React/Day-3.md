@@ -58,6 +58,12 @@ Q) Why It Is Called render?
 
 The word render in programming means. To generate and display visual output on the screen.
 
+Q) What is JSX?
+
+JSX is a syntax that lets us write HTML-like code inside JavaScript. But the browser does not directly understand JSX, so it gets converted into React code like this (const element = React.createElement("h1", null, "Hello World");). And Babel is responsible for all this because JSX is actually understood because of Babel. It is Babel that converts JSX into React.createElement().
+
+
+
 
 
 

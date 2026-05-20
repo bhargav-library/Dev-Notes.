@@ -62,6 +62,17 @@ Q) What is JSX?
 
 JSX is a syntax that lets us write HTML-like code inside JavaScript. But the browser does not directly understand JSX, so it gets converted into React code like this (const element = React.createElement("h1", null, "Hello World");). And Babel is responsible for all this because JSX is actually understood because of Babel. It is Babel that converts JSX into React.createElement().
 
+Q) What is Babel?
+
+Babel is a JavaScript compiler that converts modern JavaScript code into older, browser-compatible JavaScript so that browsers can understand it properly. Babel is needed because browsers do not always understand JSX or newer JavaScript features like ES6+ features. For example, if we write const element = <h1>Hello</h1>;, the browser cannot understand JSX directly. Babel converts it into React.createElement("h1", null, "Hello"), which the browser can understand. Similarly, if we write modern JavaScript like const add = (a, b) => a + b;, Babel converts it into older JavaScript syntax like var add = function(a, b) { return a + b; };. Babel basically performs transpilation, which means converting source code from one version into another version. In React, when we write JSX such as <h1>Hello</h1>, Babel converts it into React.createElement() behind the scenes. That is why JSX works in React. One important thing to remember is that Babel does not run in the browser. It runs during development or build time using tools like Vite or Webpack.
+
+
+
+
+
+
+
+
 
 
 

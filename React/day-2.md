@@ -23,43 +23,12 @@ Q) What is {} denotes in react?
 
 classes should come under {}. Whenever we are passing inside {}, will go as tag attributes of h1.
 
-Q) What is difference between react.development.js and react.production.js files via CDN?
+Q) What is the difference between `react.development.js` and `react.production.js` files via CDN?
 
-1.	react.development.js: This version is used while developing your app.
+`react.development.js` is the version of React that is used while developing an application. This version contains human-readable code, which makes debugging easier for developers. The file is not compressed, and React provides detailed warnings and error messages that help developers identify mistakes and reduce bugs during development. However, this version also has some drawbacks. Since it contains debugging tools and extra developer warnings, the file size becomes larger. It is also slightly slower because React performs additional checks in the background.
 
-Some features are:
+On the other hand, `react.production.js` is the version used in real or live websites. This version is optimized for speed and performance because all unnecessary development checks and warnings are removed. The code is compressed and minified, which reduces the file size and improves loading speed for real users. However, this version also has some disadvantages. It does not provide detailed warning messages, and debugging becomes harder because the code is compressed into very small unreadable lines.
 
-•	Human-readable code
-
-•	The file is not compressed, so developers can debug easily.
-
-•	Gives warnings and error messages.
-
-•	React helps developers by showing detailed warnings.
-
-But is has some drawbacks also:
-
-•	Bigger file size, because it contains debugging tools and warnings.
-
-•	 Slower than production version, extra checks make it slightly slower.
-
-2. react.production.js: This version is used in real/live websites.
-   
-Some features are:
-
-•	Optimized for speed. All unnecessary development checks are removed.
-
-•	Smaller file size. The code is compressed/minified.
-
-•	Faster performance. Better for real users.
-
-It also has some drawbacks:
-
-•	No detailed warning. React removes most developer helper messages.
-
-•	Harder to debug. The code is compressed into very small unreadable lines.
-
-
-So, while developing we can use develop.js to reduce bugs and later when the development is done and the app is ready to push to production we can replace the development link with production link.
+So, during development we usually use the development version of React because it helps in finding bugs and understanding errors easily. Later, when the application is fully developed and ready for deployment, we replace the development CDN link with the production CDN link for better performance and faster loading speed.
 
 

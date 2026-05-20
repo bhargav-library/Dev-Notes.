@@ -26,117 +26,14 @@ Q ) What is Emmet?
 Emmet is the essential toolkit for web-developers. It allows us
 to type shortcuts that are then expanded into full-fledged boiler plate code for writing HTML and CSS.
 
-Q ) Difference between React and ReactDOM ?
+Q) What is the difference between React and ReactDOM?
 
+In React, there are two different libraries with different responsibilities. React is responsible for creating elements and defining the UI structure, while ReactDOM takes those elements and renders them into the browser DOM. We can think of it like this: React designs the UI, and ReactDOM displays the UI in the browser.
 
-In React there are two different libraries with different responsibilities:
+The main job of React is to create elements. A React element is simply a JavaScript object that describes what the UI should look like. For example, when we write `const heading = React.createElement("h1", null, "Hello World");`, React creates an element that describes the type as `"h1"`, the props as `null`, and the content as `"Hello World"`. The `null` here represents the props object. It is used because the `h1` element has no attributes such as `className`, `id`, or `style`. So React uses `null` to mean that no props are provided. Internally, React creates an object like `{ type: "h1", props: { children: "Hello World" } }`.
 
-React → creates elements and defines UI structure.
+Props are attributes passed to React elements or components to control their behavior, appearance, and data. If props are provided, for example `React.createElement("h1", { id: "title" }, "Hello");`, then internally React creates something like `{ type: "h1", props: { id: "title", children: "Hello" } }`. At this stage, nothing appears on the screen because it is only a description of the UI.
 
-ReactDOM → takes those elements and renders them to the browser DOM.
+To actually display the element in the browser, ReactDOM is used. For example, when we write `const root = ReactDOM.createRoot(document.getElementById("root"));` and then `root.render(heading);`, `document.getElementById("root")` first finds a real DOM element from the HTML file. Then ReactDOM creates a React root container, and `root.render(heading)` converts the React element into a real DOM node and inserts it into the webpage. As a result, “Hello World” becomes visible in the browser.
 
-Think of it like this:
-
-React = design the UI
-
-ReactDOM = display the UI in the browser
-1. Creating an Element (React)
-
-React’s core job is to create elements.
-A React element is just a JavaScript object that describes what the UI should look like.
-
-Example:
-
-const heading = React.createElement(
-  "h1",
-  null,
-  "Hello World"
-);
-
-Here React creates an element that describes:
-
-type → "h1"
-
-props → null
-
-content → "Hello World"
-
-the null represents the props object.
-
-Why null?
-
-Because h1 has no attributes.
-
-
-no className
-
-no id
-
-no style
-
-So React uses:
-
-null
-
-meaning:
-
-“No props are provided.”
-
-So internally React creates something like:
-
-{
-  type: "h1",
-  props: {
-    children: "Hello World"
-  }
-}
-
-Props are attributes passed to React elements/components to control their behavior, appearance, and data.
-
-if props existed:
-
-React.createElement(
-  "h1",
-  { id: "title" },
-  "Hello"
-);
-
-then:
-
-{
-  type: "h1",
-  props: {
-    id: "title",
-    children: "Hello"
-  }
-}
-
-
-At this point:
-
-Nothing appears on the screen.
-It is just a description of UI.
-
-2. Rendering an Element (ReactDOM)
-
-To actually show that element in the browser, ReactDOM is used.
-
-Example:
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
-
-What happens here:
-
-document.getElementById("root")
-Finds a real DOM element in HTML.
-ReactDOM.createRoot(...)
-Creates a React root container.
-root.render(heading)
-ReactDOM converts the React element → real DOM node
-Then inserts it into the page.
-
-Result in browser:
-
-<h1>Hello World</h1>
 

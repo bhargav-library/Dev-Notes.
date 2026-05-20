@@ -66,6 +66,12 @@ Q) What is Babel?
 
 Babel is a JavaScript compiler that converts modern JavaScript code into older, browser-compatible JavaScript so that browsers can understand it properly. Babel is needed because browsers do not always understand JSX or newer JavaScript features like ES6+ features.The browser cannot understand JSX directly. Babel converts it into React.createElement("h1", null, "Hello"), which the browser can understand. Similarly, if we write modern JavaScript like const add = (a, b) => a + b;, Babel converts it into older JavaScript syntax like var add = function(a, b) { return a + b; };. Babel basically performs transpilation, which means converting source code from one version into another version. In React, when we write JSX such as "Hello" inside a h1 tag, Babel converts it into React.createElement() behind the scenes. That is why JSX works in React. One important thing to remember is that Babel does not run in the browser. It runs during development or build time using tools like Vite or Webpack.
 
+Q) What is the relationship between Pracel and Babel?
+
+Parcel uses Babel internally. Parcel is a bundler, while Babel is a compiler. The job of Parcel is to manage the project, combine files like JavaScript, CSS, and images, optimize the code, start the development server, and create the production build. On the other hand, the job of Babel is to convert JSX into JavaScript and transform modern JavaScript features into older browser-compatible JavaScript.
+
+Parcel automatically uses Babel whenever it detects JSX or modern JavaScript syntax. The flow works like this: first, you write code using JSX or modern ES6+ JavaScript. Then Parcel reads your files and internally uses Babel to transform the code into browser-compatible JavaScript. After that, Parcel bundles everything together and sends it to the browser.
+
 
 
 

@@ -72,6 +72,11 @@ Parcel uses Babel internally. Parcel is a bundler, while Babel is a compiler. Th
 
 Parcel automatically uses Babel whenever it detects JSX or modern JavaScript syntax. The flow works like this: first, you write code using JSX or modern ES6+ JavaScript. Then Parcel reads your files and internally uses Babel to transform the code into browser-compatible JavaScript. After that, Parcel bundles everything together and sends it to the browser.
 
+Q) Does the relationship remain the same if we use Vite or another bundler instead of Parcel with Babel?
+
+Yes, the relationship basically remains the same even if we use Vite or other bundlers instead of Parcel. The bundler and Babel still have different responsibilities. The bundler manages the project, development server, optimization, and production build, while Babel transforms JSX and modern JavaScript into browser-compatible JavaScript. The main difference is how each bundler uses Babel internally. For example, Parcel automatically uses Babel with almost no configuration, while Webpack usually uses Babel through `babel-loader`. Vite mainly uses a faster tool called ESBuild during development, but it can still use Babel when needed through plugins. So the overall flow still remains the same: first you write modern JavaScript or JSX, then the bundler processes the project and uses Babel or another transformer internally, and finally the browser receives browser-compatible JavaScript.
+
+
 
 
 

@@ -76,16 +76,6 @@ Q) Does the relationship remain the same if we use Vite or another bundler inste
 
 Yes, the relationship basically remains the same even if we use Vite or other bundlers instead of Parcel. The bundler and Babel still have different responsibilities. The bundler manages the project, development server, optimization, and production build, while Babel transforms JSX and modern JavaScript into browser-compatible JavaScript. The main difference is how each bundler uses Babel internally. For example, Parcel automatically uses Babel with almost no configuration, while Webpack usually uses Babel through `babel-loader`. Vite mainly uses a faster tool called ESBuild during development, but it can still use Babel when needed through plugins. So the overall flow still remains the same: first you write modern JavaScript or JSX, then the bundler processes the project and uses Babel or another transformer internally, and finally the browser receives browser-compatible JavaScript.
 
-Q) What is camelCase in JSX, and what are the different types of attributes in JSX?
-
-Camel case is a naming style where the first word starts with a lowercase letter and every next word starts with an uppercase letter. Examples include `backgroundColor`, `fontSize`, `onClick`, and `className`. This style looks like camel humps, which is why it is called camelCase. JSX uses camelCase because JSX is written inside JavaScript, and JavaScript property names usually follow the camelCase naming convention. That is why React uses `className` instead of `class`, `onClick` instead of `onclick`, and `tabIndex` instead of `tabindex`.
-
-For example, in normal HTML we write `<button onclick="test()">Click</button>`, but in JSX we write `<button onClick={test}>Click</button>`. Similarly, in normal CSS we write `background-color: red;` and `font-size: 20px;`, but in JSX inline styling we write `backgroundColor: "red"` and `fontSize: "20px"` because JavaScript object properties use camelCase. React chose this approach because JSX eventually becomes JavaScript objects like `{ className: "title", onClick: handleClick }`. JavaScript identifiers cannot contain hyphens like `background-color`, so React uses `backgroundColor` instead.
-
-The attributes used in JSX are called props in React, and they define an element’s styling, behavior, content, events, and functionality. There are many different types of attributes in JSX. General attributes include `className`, `id`, `style`, and `title`, which are commonly used for styling and identification. Image attributes include `src`, `alt`, `width`, and `height`. Link attributes include `href` and `target`. Form and input attributes include `type`, `placeholder`, `value`, `checked`, `disabled`, and `required`. Event attributes handle user interactions, such as `onClick`, `onChange`, `onSubmit`, and `onMouseOver`. JSX also supports boolean attributes like `hidden` and `required`, as well as custom data attributes like `data-id`.
-
-In JSX, all these attributes become part of the props object. For example, `<input type="text" placeholder="Name" />` internally becomes something like `React.createElement("input", { type: "text", placeholder: "Name" });`. So, attributes in JSX are basically properties passed to React elements to control how they look and behave.
-
 
 
 

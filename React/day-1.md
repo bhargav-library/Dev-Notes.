@@ -37,3 +37,16 @@ Props are attributes passed to React elements or components to control their beh
 To actually display the element in the browser, ReactDOM is used. For example, when we write `const root = ReactDOM.createRoot(document.getElementById("root"));` and then `root.render(heading);`, `document.getElementById("root")` first finds a real DOM element from the HTML file. Then ReactDOM creates a React root container, and `root.render(heading)` converts the React element into a real DOM node and inserts it into the webpage. As a result, “Hello World” becomes visible in the browser.
 
 
+Q) What is camelCase in JSX, and what are the different types of attributes in JSX?
+
+Camel case is a naming style where the first word starts with a lowercase letter and every next word starts with an uppercase letter. Examples include `backgroundColor`, `fontSize`, `onClick`, and `className`. This style looks like camel humps, which is why it is called camelCase. JSX uses camelCase because JSX is written inside JavaScript, and JavaScript property names usually follow the camelCase naming convention. That is why React uses `className` instead of `class`, `onClick` instead of `onclick`, and `tabIndex` instead of `tabindex`.
+
+For example, in normal HTML we write `<button onclick="test()">Click</button>`, but in JSX we write `<button onClick={test}>Click</button>`. Similarly, in normal CSS we write `background-color: red;` and `font-size: 20px;`, but in JSX inline styling we write `backgroundColor: "red"` and `fontSize: "20px"` because JavaScript object properties use camelCase. React chose this approach because JSX eventually becomes JavaScript objects like `{ className: "title", onClick: handleClick }`. JavaScript identifiers cannot contain hyphens like `background-color`, so React uses `backgroundColor` instead.
+
+The attributes used in JSX are called props in React, and they define an element’s styling, behavior, content, events, and functionality. There are many different types of attributes in JSX. General attributes include `className`, `id`, `style`, and `title`, which are commonly used for styling and identification. Image attributes include `src`, `alt`, `width`, and `height`. Link attributes include `href` and `target`. Form and input attributes include `type`, `placeholder`, `value`, `checked`, `disabled`, and `required`. Event attributes handle user interactions, such as `onClick`, `onChange`, `onSubmit`, and `onMouseOver`. JSX also supports boolean attributes like `hidden` and `required`, as well as custom data attributes like `data-id`.
+
+In JSX, all these attributes become part of the props object. For example, `<input type="text" placeholder="Name" />` internally becomes something like `React.createElement("input", { type: "text", placeholder: "Name" });`. So, attributes in JSX are basically properties passed to React elements to control how they look and behave.
+
+
+
+

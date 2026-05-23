@@ -1,1 +1,18 @@
 
+Q) What does `npx parcel index.html` mean?
+
+The command `npx parcel index.html` means “run the Parcel bundler on `index.html` and start a local development server.” Here, `npx` is a tool that comes with Node.js and npm, and it allows us to run packages without installing them globally on our system. So when we run `npx parcel index.html`, `npx` temporarily runs Parcel for our project.
+
+Parcel is a bundler whose job is to read project files, bundle them together, process modern JavaScript and JSX, use Babel internally when needed, start a local development server, and enable features like hot reloading. The `index.html` file acts as the entry point of the application, meaning Parcel starts reading and analyzing the project from this file. After that, Parcel bundles the project, processes the code into browser-compatible JavaScript, and serves the application on a local server so we can view it in the browser during development.
+
+A very important concept related to Parcel is development dependencies. A development dependency is a package that is needed only while developing the project, not in the final production application. Tools like Parcel, Babel, ESLint, and Webpack are examples of development dependencies because they help developers during development and build time, but browsers do not need them after the app is deployed. That is why Parcel is usually installed as a dev dependency using `npm install -D parcel`. After installing it, Parcel appears inside the `"devDependencies"` section of `package.json`.
+
+This is different from normal dependencies. Packages listed under `"dependencies"` are required in the final production application. For example, if we install React using `npm install react`, React becomes part of the final application because the browser needs it to run the app. But Parcel is only required during development and build time, so it belongs in `"devDependencies"`.
+
+Another important concept is the `dist` folder. `dist` stands for “distribution,” and it contains the final optimized production-ready files of the application. This folder is created when we run a build command like `npx parcel build index.html`. Inside the `dist` folder, we usually see optimized files such as compressed JavaScript, CSS, images, and HTML files. These files are browser-ready and are the actual files deployed to a server.
+
+During development, our project may contain JSX, React code, source files, Babel configurations, and `node_modules`, but browsers cannot directly understand many of these things. So Parcel processes and converts everything into simple optimized production files inside the `dist` folder. The flow works like this: first we write source code, then Parcel builds and optimizes it, and finally the `dist` folder is generated, which is deployed to a server.
+
+There is also an important difference between source files and `dist` files. Source files are written for developers and may contain JSX and unoptimized code, while the `dist` folder contains optimized browser-compatible files meant for real users. For example, if we write `const element = <h1>Hello</h1>;`, Parcel and Babel convert it into browser-compatible JavaScript inside the `dist` folder.
+
+One very important concept to understand is that users never directly see our original React or JSX code. They only receive the optimized files from the `dist` folder through the server and browser. We can think of this process like cooking a pizza: the source code is like raw ingredients, Parcel build is the cooking process, and the `dist` folder is the final pizza served to users. In short, the `dist` folder is the production-ready output folder containing optimized files generated after building the application.

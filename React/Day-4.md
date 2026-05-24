@@ -36,3 +36,14 @@ Hot Module Replacement (HMR) is a feature provided by Parcel that automatically 
 Another important feature of Parcel is `.parcel-cache`. Parcel uses caching to improve build speed and overall developer experience. Whenever we run the application for the first time, Parcel creates a build, which may take some time. During this process, Parcel also creates a folder called `.parcel-cache`, where it stores cached data in an optimized binary format. Later, if we make code changes and save the project, Parcel reuses much of the previously cached information instead of rebuilding everything from scratch. Because of this caching mechanism, subsequent builds become much faster than the initial build.
 
 In simple terms, HMR helps automatically update the browser when code changes are made, while `.parcel-cache` helps Parcel speed up future builds by storing reusable build information. Together, these features make Parcel faster and provide a better developer experience.
+
+Q) What are transitive dependencies?
+
+Transitive dependencies are the dependencies of our dependencies. In a project, when we install a package using npm, that package may itself depend on many other packages to work properly. Those additional packages are called transitive dependencies. Our package manager, such as npm, automatically takes care of installing and managing these dependencies for us.
+
+For example, when we install a tool like Parcel to build a production-ready application, Parcel itself requires many other packages internally for features like bundling, minification, compression, optimization, caching, and code transformation. Those packages may again depend on even more packages. This creates a chain of dependencies, and these indirectly installed packages are known as transitive dependencies.
+
+This is important because building a modern production-ready application involves many complex optimizations that would be very difficult to implement manually. Instead of doing everything ourselves, we rely on libraries and tools, and those tools rely on many other dependencies internally. The package manager automatically installs and manages this entire dependency tree inside the `node_modules` folder.
+
+In simple terms, direct dependencies are the packages we install ourselves, while transitive dependencies are the packages required by those installed packages to function correctly.
+

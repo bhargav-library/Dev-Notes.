@@ -76,6 +76,27 @@ Q) Does the relationship remain the same if we use Vite or another bundler inste
 
 Yes, the relationship basically remains the same even if we use Vite or other bundlers instead of Parcel. The bundler and Babel still have different responsibilities. The bundler manages the project, development server, optimization, and production build, while Babel transforms JSX and modern JavaScript into browser-compatible JavaScript. The main difference is how each bundler uses Babel internally. For example, Parcel automatically uses Babel with almost no configuration, while Webpack usually uses Babel through `babel-loader`. Vite mainly uses a faster tool called ESBuild during development, but it can still use Babel when needed through plugins. So the overall flow still remains the same: first you write modern JavaScript or JSX, then the bundler processes the project and uses Babel or another transformer internally, and finally the browser receives browser-compatible JavaScript.
 
+ Parcel features at a glance:
+ 
+Hot Module Replacement (HMR)
+File Watcher Algorithm - C++
+Bundling
+Minify Code
+Cleaning our code
+Dev and production build
+Igniting Our App! ( Namaste-React ) 8
+Super fast build algorithm
+Image Optimization
+Caching while development
+Compression
+Compatible with older browser versions
+Https on dev
+Image Optimization
+Port No
+Consistency Hashing Algorithm
+Zero Config
+Tree Shaking
+
 
 
 

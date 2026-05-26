@@ -86,6 +86,18 @@ elements using React.createElement()
    
 5) JSX prevents code injections (attacks)
 
+
+Q) What is the difference between HTML and JSX?
+
+JSX is not HTML. It’s HTML-like syntax.
+
+HTML uses ‘class’ property whereas JSX uses ‘className’
+property
+
+HTML can use hypens in property names whereas JSX uses
+camelCase syntax. 
+
+
 Q) What is Babel?
 
 Babel is a JavaScript compiler that converts modern JavaScript code into older, browser-compatible JavaScript so that browsers can understand it properly. Babel is needed because browsers do not always understand JSX or newer JavaScript features like ES6+ features.The browser cannot understand JSX directly. Babel converts it into React.createElement("h1", null, "Hello"), which the browser can understand. Similarly, if we write modern JavaScript like const add = (a, b) => a + b;, Babel converts it into older JavaScript syntax like var add = function(a, b) { return a + b; };. Babel basically performs transpilation, which means converting source code from one version into another version. In React, when we write JSX such as "Hello" inside a h1 tag, Babel converts it into React.createElement() behind the scenes. That is why JSX works in React. One important thing to remember is that Babel does not run in the browser. It runs during development or build time using tools like Vite or Webpack.

@@ -17,6 +17,16 @@ There is also an important difference between source files and `dist` files. Sou
 
 One very important concept to understand is that users never directly see our original React or JSX code. They only receive the optimized files from the `dist` folder through the server and browser. We can think of this process like cooking a pizza: the source code is like raw ingredients, Parcel build is the cooking process, and the `dist` folder is the final pizza served to users. In short, the `dist` folder is the production-ready output folder containing optimized files generated after building the application.
 
+Q) What is another way of starting the build of the project?
+
+Another way of starting and managing a project build is by creating custom scripts inside the `package.json` file instead of repeatedly typing commands like `npx parcel index.html`. In modern projects, we usually define separate scripts for development and production inside the `"scripts"` section of `package.json`. These scripts act as shortcuts for running commands.
+
+For example, we can create a script for starting the development server using Parcel and another script for creating the production build. Once the scripts are added, we can run them directly from the terminal using npm commands. To start the development server, we can use either `npm run start` or simply `npm start`. For creating a production build, we use `npm run build`.
+
+The advantage of using scripts is that we do not have to remember or repeatedly type long commands. It also makes project management cleaner and more standardized because every developer on the project can use the same predefined commands. Internally, npm reads the commands from the `"scripts"` section of `package.json` and executes them for us.
+
+In simple terms, npm scripts provide an easier and more organized way to run development and production commands in a project.
+
 
 Q) What happens while configuring a project using npm, and what is the difference between `package.json` and `package-lock.json`?
 

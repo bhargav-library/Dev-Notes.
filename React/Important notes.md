@@ -60,17 +60,20 @@ JSX
 ↓
 
 React.createElement()
+
 ↓
 
 React Element (JS Object)
+
 ↓
 
 ReactDOM renders it to Real DOM
+
 ↓
 
 Visible UI
 
-You can even manually create the object yourself:
+we can even manually create the object yourself:
 
 const element = {
   type: "h1",

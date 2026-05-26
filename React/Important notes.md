@@ -73,7 +73,7 @@ ReactDOM renders it to Real DOM
 
 Visible UI
 
-we can even manually create the object yourself:
+we can even manually create the object ourself:
 
 const element = {
   type: "h1",

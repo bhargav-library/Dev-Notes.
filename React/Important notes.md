@@ -12,3 +12,76 @@ When we use `appendChild()`, it indirectly displays content on the browser. The 
 
 In `document.body.appendChild(para);`, the `body` acts as the parent element and the `<p>` becomes the child element. After appending, the DOM structure becomes `<body><p>Hello Bhargav</p></body>`. It is called `appendChild()` because it appends or adds a child element inside a parent element. The DOM itself works like a tree structure where every element can have parents, children, and siblings. This is how the browser internally organizes a webpage.
 
+
+
+A React Element is just a normal JavaScript object that describes what should appear on the screen.
+
+Example:
+
+const heading = React.createElement(
+  "h1",
+  { id: "title" },
+  "Hello React"
+);
+
+console.log(heading);
+
+Output:
+
+{
+  type: "h1",
+  props: {
+    id: "title",
+    children: "Hello React"
+  },
+  key: null,
+  ref: null,
+  ...
+}
+
+So this:
+
+const heading = <h1 id="title">Hello React</h1>
+
+after Babel conversion becomes:
+
+const heading = React.createElement(
+  "h1",
+  { id: "title" },
+  "Hello React"
+);
+
+And React.createElement() returns a plain JS object.
+
+Flow:
+
+JSX
+
+↓
+
+React.createElement()
+↓
+
+React Element (JS Object)
+↓
+
+ReactDOM renders it to Real DOM
+↓
+
+Visible UI
+
+You can even manually create the object yourself:
+
+const element = {
+  type: "h1",
+  props: {
+    children: "Hello"
+  }
+};
+
+But normally React creates this object for us.
+
+
+
+
+

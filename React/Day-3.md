@@ -62,6 +62,30 @@ Q) What is JSX?
 
 JSX is a syntax that lets us write HTML-like code inside JavaScript. But the browser does not directly understand JSX, so it gets converted into React code like this (const element = React.createElement("h1", null, "Hello World");). And Babel is responsible for all this because JSX is actually understood because of Babel. It is Babel that converts JSX into React.createElement().
 
+Advantages of using JSX.
+
+1) Sanitizes the data
+   
+If someone gets access to your JS code and sends some malicious
+data which will then get displayed on the screen, that attack is
+called cross-site scripting.
+It can read cookies, local storage, session storage, get
+cookies, get info about your device, and read data. JSx takes
+care of your data.
+If some API passes some malicious data JSX will escape it. It
+prevents cross-site scripting and sanitizes the data before
+rendering
+
+2) Makes code readable
+JSX makes it easier to write code as we are no longer creating
+elements using React.createElement()
+
+3) Makes code simple and elegant
+   
+4) Show more useful errors and warnings
+   
+5) JSX prevents code injections (attacks)
+
 Q) What is Babel?
 
 Babel is a JavaScript compiler that converts modern JavaScript code into older, browser-compatible JavaScript so that browsers can understand it properly. Babel is needed because browsers do not always understand JSX or newer JavaScript features like ES6+ features.The browser cannot understand JSX directly. Babel converts it into React.createElement("h1", null, "Hello"), which the browser can understand. Similarly, if we write modern JavaScript like const add = (a, b) => a + b;, Babel converts it into older JavaScript syntax like var add = function(a, b) { return a + b; };. Babel basically performs transpilation, which means converting source code from one version into another version. In React, when we write JSX such as "Hello" inside a h1 tag, Babel converts it into React.createElement() behind the scenes. That is why JSX works in React. One important thing to remember is that Babel does not run in the browser. It runs during development or build time using tools like Vite or Webpack.

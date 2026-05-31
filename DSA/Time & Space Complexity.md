@@ -16,3 +16,14 @@ One important advantage of Linear Search is that it works even on unsorted array
 
 In simple terms, Linear Search means checking elements one by one until the required element is found.
 
+Q) What is Binary Search?
+
+Binary Search is a searching algorithm used to find an element in a sorted array by repeatedly dividing the search space into two halves. Instead of checking elements one by one like Linear Search, Binary Search directly checks the middle element of the array. If the middle element matches the target value, the search stops. If the target value is smaller than the middle element, the search continues only in the left half of the array. If the target value is greater, the search continues only in the right half. This process keeps repeating until the element is found or the search space becomes empty.
+
+In the best case, the middle element itself matches the target value, so only one operation is needed. In both the average case and the worst case, the number of operations required is approximately `log₂(n)` because the search space gets reduced to half after every step.
+
+The time complexity of Binary Search is O(\log n), which makes it much faster than Linear Search for large datasets.
+
+One important requirement of Binary Search is that it only works on sorted arrays. If the array is not sorted, Binary Search cannot correctly determine which half to discard during the search process.
+
+In simple terms, Binary Search repeatedly divides a sorted array into halves to quickly find the required element.

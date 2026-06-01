@@ -27,3 +27,8 @@ The time complexity of Binary Search is O(\log n), which makes it much faster th
 One important requirement of Binary Search is that it only works on sorted arrays. If the array is not sorted, Binary Search cannot correctly determine which half to discard during the search process.
 
 In simple terms, Binary Search repeatedly divides a sorted array into halves to quickly find the required element.
+
+When we use Linear Search for an input size of 100, it runs 100 times, whereas Binary Search takes only 7 steps. This shows that Binary Search is more efficient. As the input size (n) increases, the way an algorithm behaves helps us understand how efficient it is. Also, the graph helps us understand that Binary Search is more efficient.
+
+Big O Notation
+It is nothing; just a symbol used to represent the worst-case complexity.

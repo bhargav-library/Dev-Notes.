@@ -37,24 +37,13 @@ What is a Log?
 
 A logarithm tells you how many times you need to multiply a number to reach another number.
 
-Example:
-log
-2
-	​
-
-(8)
+Example:log(2)(8)
 
 This means:
-“2 multiplied by itself how many times gives 8?”
+2 multiplied by itself how many times gives 8?
 
 2 × 2 × 2 = 8 → (3 times)
 
-So:
-
-log
-2
-	​
-
-(8)=3
+So: log(2)(8)=3
 
 

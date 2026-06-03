@@ -33,4 +33,28 @@ When we use Linear Search for an input size of 100, it runs 100 times, whereas B
 Big O Notation
 It is nothing; just a symbol used to represent the worst-case complexity.
 
+What is a Log?
+
+A logarithm tells you how many times you need to multiply a number to reach another number.
+
+Example:
+log
+2
+	​
+
+(8)
+
+This means:
+“2 multiplied by itself how many times gives 8?”
+
+2 × 2 × 2 = 8 → (3 times)
+
+So:
+
+log
+2
+	​
+
+(8)=3
+
 

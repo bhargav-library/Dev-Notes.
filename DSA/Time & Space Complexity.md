@@ -66,3 +66,16 @@ O(2^n) – Recursion (e.g., Fibonacci)
 O(n!) – e.g., Brute-force permutations
 
 
+What is Space Complexity?
+
+Space complexity refers to how much extra memory an algorithm uses.
+
+Examples:
+
+Access 5th element: O(1)
+
+Find max with variable: O(1)
+
+New array: O(n)
+
+2D Matrix: O(n^2)

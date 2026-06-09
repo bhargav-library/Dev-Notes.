@@ -19,9 +19,7 @@ Q) What is Cross Origin?
 
  The cross origin attribute in the script tag enables Cross Origin Resource Sharing (CORS) for loading external JavaScript files from different origin than the hosting web page. This allows the script to access resources from the server hosting the script, such as making HTTP requests or accessing data.
  
-Q) What is {} denotes in react?
 
-classes should come under {}. Whenever we are passing inside {}, will go as tag attributes of h1.
 
 Q) What is the difference between `react.development.js` and `react.production.js` files via CDN?
 

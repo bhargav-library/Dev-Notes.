@@ -15,3 +15,22 @@ This is also where destructuring on the fly comes into the picture. Without dest
 
 In simple terms, the `props` inside a React element are part of the element's configuration or blueprint, while the `props` inside a component are the same object received as a function argument when React executes that component. React first stores the data in the element object and then passes it to the component during rendering.
 
+Q) Why is it considered a bad practice to use the array index as a key in React?
+
+In React, the `key` prop helps React uniquely identify items in a list between renders. React uses these keys during its reconciliation process to determine which items have been added, removed, updated, or moved. The goal is to efficiently update only the necessary parts of the UI.
+
+Using the array index as a key may seem convenient, and it often works when the list is completely static. However, problems arise when items are inserted, deleted, reordered, or filtered. This happens because the index represents an item's position in the array, not the item's actual identity.
+
+For example, suppose we have a list containing Apple, Banana, and Mango with keys `0`, `1`, and `2`. If we insert Orange at the beginning of the array, all the existing items shift to new indexes. Apple's key changes from `0` to `1`, Banana's key changes from `1` to `2`, and so on. React then assumes that the component previously associated with key `0` is the same component that should now display Orange. As a result, React may reuse component instances incorrectly.
+
+This becomes especially problematic when list items contain local state, user input, animations, or other component-specific data. A component may preserve the state of a completely different item because React thinks they are the same component due to sharing the same key value.
+
+Instead of using indexes, it is usually better to use a unique and stable identifier such as a database ID, product ID, or user ID. Stable keys allow React to correctly track each item even when the list changes.
+
+Using the array index as a key is generally acceptable only when the list is static, never reordered, never filtered, and never has items inserted or removed. In all other cases, a unique and stable key should be used.
+
+In simple terms, array indexes are tied to positions, while React keys should represent the identity of an item. When positions change, index-based keys can cause React to associate the wrong component with the wrong data, leading to unexpected bugs and incorrect state preservation.
+
+
+
+

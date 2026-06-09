@@ -1,0 +1,1 @@
+Consistent Hashing = Consistent hashing in Parcel means generating filenames based on file content. If the content doesn't change, the filename stays the same and the browser uses its cached copy. If the content changes, Parcel creates a new hashed filename, forcing the browser to download the latest version while still benefiting from caching for unchanged files.

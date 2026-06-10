@@ -16,3 +16,7 @@ Variables get their assigned values.
 Functions are executed.
 
 This mechanism allows JS to know about variables and functions before execution, leading to hoisting behavior.
+
+What is undefined in JavaScript?
+
+Answer: undefined is a primitive value automatically assigned by JavaScript to a variable that has been declared but not initialized.

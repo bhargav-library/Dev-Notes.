@@ -20,3 +20,8 @@ This mechanism allows JS to know about variables and functions before execution,
 What is undefined in JavaScript?
 
 Answer: undefined is a primitive value automatically assigned by JavaScript to a variable that has been declared but not initialized.
+
+Why is using var generally discouraged in modern JavaScript?
+
+Answer: Because var is function-scoped, allows re-declaration, and supports hoisting with undefined, it often leads to bugs and confusing behavior.
+let and const (introduced in ES6) are block-scoped and safer.

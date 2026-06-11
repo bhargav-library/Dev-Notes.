@@ -23,5 +23,15 @@ Answer: undefined is a primitive value automatically assigned by JavaScript to a
 
 Why is using var generally discouraged in modern JavaScript?
 
+Temporal Dead Zone (TDZ)
+
+The Temporal Dead Zone is the period between the start of a scope (like a block { } or function) and the line where a let or const variable is declared — during which the variable exists but cannot be accessed.
 Answer: Because var is function-scoped, allows re-declaration, and supports hoisting with undefined, it often leads to bugs and confusing behavior.
 let and const (introduced in ES6) are block-scoped and safer.
+
+{
+  // TDZ starts here
+  console.log(a); // ❌ ReferenceError
+  let a = 10;     // TDZ ends here
+  console.log(a); // ✅ 10
+}

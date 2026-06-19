@@ -87,3 +87,27 @@ solution : var maxProfit = function(prices) {
       }
       return maxProfit;
   };     
+but this solution use a time complexity of n^2 so it is not the best and optimal solution.
+
+optimal solution would be 
+
+var maxProfit = function(prices) {
+    let minPrice = prices[0];
+    let maxProfit = 0;
+
+    for(let i = 1; i < prices.length; i++) {
+        if(prices[i] < minPrice) {
+            minPrice = prices[i];
+        }
+
+        let profit = prices[i] - minPrice;
+
+        if(profit > maxProfit) {
+            maxProfit = profit;
+        }
+    }
+
+    return maxProfit;
+};
+
+here the time complexity is log(n).

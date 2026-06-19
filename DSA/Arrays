@@ -87,7 +87,7 @@ solution : var maxProfit = function(prices) {
       }
       return maxProfit;
   };     
-but this solution use a time complexity of n^2 so it is not the best and optimal solution.
+but this solution use a time complexity oflog(n^2) so it is not the best and optimal solution.
 
 optimal solution would be 
 

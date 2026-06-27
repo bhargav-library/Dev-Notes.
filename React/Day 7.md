@@ -37,3 +37,5 @@ In simple terms, the Virtual DOM is the JavaScript representation of the UI, the
 A useful analogy is to think of the Virtual DOM as a blueprint of a building, diffing as comparing old and new blueprints, reconciliation as deciding what construction changes are needed, Fiber as the project manager that schedules and prioritizes the work, and the Real DOM as the actual building being modified. Therefore, Fiber performs reconciliation, reconciliation uses diffing, and diffing operates on the Virtual DOM to update the Real DOM efficiently.
 
 What is a state variable?
+
+A state variable is React's way of tracking data that affects the UI. When you update state using its setter function, React re-renders the component, creates a new Virtual DOM, compares it with the previous one, and updates only the changed parts of the Real DOM, making UI updates efficient.

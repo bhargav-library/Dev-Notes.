@@ -35,3 +35,5 @@ The relationship between these concepts can be summarized as follows: a componen
 In simple terms, the Virtual DOM is the JavaScript representation of the UI, the Diffing Algorithm finds changes between Virtual DOM trees, Reconciliation is the entire UI update process, React Fiber is the engine that performs reconciliation efficiently, and the Real DOM is the actual browser DOM displayed to users.
 
 A useful analogy is to think of the Virtual DOM as a blueprint of a building, diffing as comparing old and new blueprints, reconciliation as deciding what construction changes are needed, Fiber as the project manager that schedules and prioritizes the work, and the Real DOM as the actual building being modified. Therefore, Fiber performs reconciliation, reconciliation uses diffing, and diffing operates on the Virtual DOM to update the Real DOM efficiently.
+
+What is a state variable?

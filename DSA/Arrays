@@ -21,8 +21,22 @@ var removeDuplicates = function(nums) {
     return x+1;
 };
 
+2. Now my question is, it is saying that return the number of unique elements. what if the question was remove the duplicates and return the new unique array. 
 
-2. Problem Statement:
+function removeDuplicates(nums) {
+    let unique = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        if (unique.length === 0 || nums[i] !== unique[unique.length - 1]) {
+            unique.push(nums[i]);
+        }
+    }
+
+    return unique;
+}
+
+
+3. Problem Statement:
 Given an integer array nums and an integer val, remove all occurrences of val in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
 
@@ -49,7 +63,7 @@ let removeElement = function(nums,val){
    return x;
 }
 
-3. Problem Statement:
+4. Problem Statement:
 Write a function that reverses a string. The input string is given as an array of characters s. You must do this by modifying the input array in-place with O(1)extra memory.
 
 Examples:
@@ -72,7 +86,7 @@ var reverseString = function(s) {
 };
 
 
-4.Problem Statement:
+5.Problem Statement:
 You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
@@ -119,10 +133,10 @@ var maxProfit = function(prices) {
 
 here the time complexity is log(n).
 
-5. Problem Statement:
+6. Problem Statement:
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
-Mergenums1 and nums2 into a single array sorted in non-decreasing order.
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
 The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 

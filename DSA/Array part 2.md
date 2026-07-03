@@ -33,7 +33,7 @@ var moveZeroes = function(nums) {
       
   };
 
-Problem Statement:
+2. Problem Statement:
 Given a binary array nums, return the maximum number of consecutive 1’s in the array.
 
 Examples

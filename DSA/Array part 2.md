@@ -45,18 +45,30 @@ Output:3
 
 Explanation The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.
 
-var findMaxConsecutiveOnes = function(nums) {
+
+var findMaxConsecutiveOnes = function(nums){
+
     let currentCount = 0;
+    
     let maxCount = 0;
+    
     for (let i = 0; i < nums.length; i++) {
+    
       if (nums[i] == 1) {
+      
         currentCount++;
-      } else {
+      }
+      else {
+      
         maxCount = Math.max(currentCount, maxCount);
         currentCount = 0;
+        
       }
+      
     }
+    
     return Math.max(maxCount, currentCount);
+    
   };
     
     

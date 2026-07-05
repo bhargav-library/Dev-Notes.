@@ -12,8 +12,7 @@ Output:[1,3,12,0,0]
 solution:
 
 var moveZeroes = function(nums) {
-
-      let x = 0;
+let x = 0;
       
       for (let i = 0; i < nums.length; i++)
       {
@@ -68,6 +67,7 @@ var findMaxConsecutiveOnes = function(nums){
     }
     
     return Math.max(maxCount, currentCount);
+    
     
   };
     

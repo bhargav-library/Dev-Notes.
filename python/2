@@ -1,1 +1,163 @@
+1. What does "interpreted language" mean in Python?
+Interview Answer
 
+Python is called an interpreted language because its code is executed by the Python Interpreter (CPython) rather than being compiled directly into machine code like C or C++.
+
+However, this is a simplified explanation.
+
+Internally, Python works like this:
+
+Python Source Code (.py)
+        ↓
+Compiler
+        ↓
+Bytecode (.pyc)
+        ↓
+Python Virtual Machine (PVM)
+        ↓
+Machine Code
+        ↓
+Output
+
+So Python first compiles your source code into bytecode, and then the Python Virtual Machine (PVM) interprets and executes that bytecode.
+
+Key Point: Python is called interpreted because the PVM executes bytecode rather than running a native machine-code executable.
+
+2. Is Python statically typed or dynamically typed?
+Interview Answer
+
+Python is a dynamically typed language.
+
+This means you do not declare the type of a variable explicitly. Python determines the type at runtime.
+
+Example:
+
+x = 10
+x = "Bhargav"
+
+The variable x first refers to an integer object and later refers to a string object.
+
+Bonus Interview Point
+
+Python is also considered strongly typed.
+
+It does not automatically convert unrelated data types in many operations.
+
+Example:
+
+"5" + 5
+
+Output:
+
+TypeError
+
+Unlike JavaScript:
+
+"5" + 5
+
+Output:
+
+"55"
+3. Why does Python use indentation instead of braces?
+Interview Answer
+
+Python uses indentation to define blocks of code instead of curly braces ({}).
+
+The main reason is readability.
+
+Python's creator, Guido van Rossum, wanted code to have a consistent, readable structure without relying on individual formatting styles.
+
+Example:
+
+if age >= 18:
+    print("Adult")
+
+Here, the indentation tells Python that print("Adult") belongs to the if block.
+
+Without proper indentation, Python raises an IndentationError.
+
+4. What happens internally before Python executes your code?
+Interview Answer
+
+Before Python executes your code, the following steps occur:
+
+Source Code (.py)
+        ↓
+Lexical Analysis (Tokenizer)
+        ↓
+Parser
+        ↓
+Abstract Syntax Tree (AST)
+        ↓
+Bytecode Compiler
+        ↓
+Bytecode (.pyc)
+        ↓
+Python Virtual Machine (PVM)
+        ↓
+Execution
+Simplified Version (Good for most interviews)
+You write Python code.
+Python compiles it into bytecode.
+The Python Virtual Machine (PVM) executes the bytecode.
+The operating system runs the resulting machine instructions.
+5. What is the difference between JavaScript's typing and Python's typing?
+Interview Answer
+
+Both JavaScript and Python are dynamically typed, meaning variable types are determined at runtime.
+
+The major difference is:
+
+JavaScript	Python
+Dynamically typed	Dynamically typed
+Weakly typed	Strongly typed
+Performs many implicit type conversions	Does very few implicit conversions
+Example
+
+JavaScript
+
+"5" + 5
+
+Output
+
+"55"
+
+Python
+
+"5" + 5
+
+Output
+
+TypeError
+
+Because Python is strongly typed, it prevents operations between incompatible types unless you explicitly convert them.
+
+Interview Summary (Memorize These)
+Q1. What does interpreted language mean?
+
+Python compiles source code into bytecode, which is then executed by the Python Virtual Machine (PVM).
+
+Q2. Is Python dynamically typed?
+
+Yes. Variable types are determined at runtime.
+
+Q3. Is Python strongly typed?
+
+Yes. Python does not automatically mix incompatible types in most operations.
+
+Q4. Why indentation?
+
+Python uses indentation to define code blocks and improve readability instead of using curly braces.
+
+Q5. What happens before execution?
+
+Source code → Bytecode → Python Virtual Machine → Execution.
+
+One small improvement
+
+As your mentor, I'll sometimes refine common explanations to make them more interview-ready. For example:
+
+Saying "Python executes code line by line" is an oversimplification.
+A more accurate answer is: "Python compiles source code into bytecode, then the Python Virtual Machine executes that bytecode."
+
+That extra level of accuracy is what often distinguishes a strong interview answer from a basic one.

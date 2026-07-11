@@ -1,5 +1,5 @@
 1. What does "interpreted language" mean in Python?
-Interview Answer
+
 
 Python is called an interpreted language because its code is executed by the Python Interpreter (CPython) rather than being compiled directly into machine code like C or C++.
 
@@ -24,7 +24,7 @@ So Python first compiles your source code into bytecode, and then the Python Vir
 Key Point: Python is called interpreted because the PVM executes bytecode rather than running a native machine-code executable.
 
 2. Is Python statically typed or dynamically typed?
-Interview Answer
+
 
 Python is a dynamically typed language.
 
@@ -59,7 +59,7 @@ Output:
 
 "55"
 3. Why does Python use indentation instead of braces?
-Interview Answer
+
 
 Python uses indentation to define blocks of code instead of curly braces ({}).
 
@@ -77,7 +77,7 @@ Here, the indentation tells Python that print("Adult") belongs to the if block.
 Without proper indentation, Python raises an IndentationError.
 
 4. What happens internally before Python executes your code?
-Interview Answer
+
 
 Before Python executes your code, the following steps occur:
 
@@ -96,13 +96,19 @@ Bytecode (.pyc)
 Python Virtual Machine (PVM)
         ↓
 Execution
+
 Simplified Version (Good for most interviews)
+
 You write Python code.
+
 Python compiles it into bytecode.
+
 The Python Virtual Machine (PVM) executes the bytecode.
+
 The operating system runs the resulting machine instructions.
+
 5. What is the difference between JavaScript's typing and Python's typing?
-Interview Answer
+
 
 Both JavaScript and Python are dynamically typed, meaning variable types are determined at runtime.
 
@@ -132,7 +138,7 @@ TypeError
 
 Because Python is strongly typed, it prevents operations between incompatible types unless you explicitly convert them.
 
-Interview Summary (Memorize These)
+Interview Summary 
 Q1. What does interpreted language mean?
 
 Python compiles source code into bytecode, which is then executed by the Python Virtual Machine (PVM).

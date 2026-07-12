@@ -1,14 +1,15 @@
 Q1. Does a variable store the value?
 
-Answer:
-
-No.
+Answer: No.
 
 A variable stores a reference to an object.
 
 Q2. What are the three characteristics of every Python object?
+
 Identity
+
 Type
+
 Value
 Q3. What does id() return?
 

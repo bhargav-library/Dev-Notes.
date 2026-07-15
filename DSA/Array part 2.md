@@ -12,7 +12,9 @@ Output:[1,3,12,0,0]
 solution:
 
 var moveZeroes = function(nums) {
+
 let x = 0;
+
       
       for (let i = 0; i < nums.length; i++)
       {
@@ -88,20 +90,35 @@ Input: nums = [4, 1, 2, 1, 2]
 Output: 4
 
 solution : 
+
 var singleNumber = function(nums) {
+
     let hash = {};
+    
     for (let i = 0; i < nums.length; i++) {
+    
         if (!hash[nums[i]]) {
+        
             hash[nums[i]] = 1;
+            
         } else {
+        
             hash[nums[i]]++;
+            
         }
+        
     }
+    
     for (let i = 0; i < nums.length; i++) {
+    
         if (hash[nums[i]] === 1) {
+        
             return nums[i];
+            
         }
+        
     }
+    
 };
          
     

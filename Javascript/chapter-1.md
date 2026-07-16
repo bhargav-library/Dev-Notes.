@@ -21,7 +21,7 @@ What is undefined in JavaScript?
 
 Answer: undefined is a primitive value automatically assigned by JavaScript to a variable that has been declared but not initialized.
 
-Why is using var generally discouraged in modern JavaScript?
+
 
 Temporal Dead Zone (TDZ)
 
@@ -30,8 +30,13 @@ Answer: Because var is function-scoped, allows re-declaration, and supports hois
 let and const (introduced in ES6) are block-scoped and safer.
 
 {
+
   // TDZ starts here
+  
   console.log(a); // ❌ ReferenceError
+  
   let a = 10;     // TDZ ends here
+  
   console.log(a); // ✅ 10
+  
 }

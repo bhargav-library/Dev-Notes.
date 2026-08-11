@@ -16,3 +16,8 @@ v) string : A string represents a sequence of characters. It is used to store an
 Array : An array is a data structure that stores elements in contiguous memory location allowing each element to accessed directly using an index. In most programming, indexing starts at 0(zero-based), while some programming language use 1-based indexing.
 
 Functions are block of codes designed to perform a specific task, and can be reused whenever needed.
+
+
+Python
+
+Strings are immutable in Python, so their contents cannot be changed after creation. Any operation that appears to modify a string creates a new string object instead. This immutability gives us some advantages. Since the value of the string cannot change, its hash value can remain stable, which makes strings hashable and allows them to be used as dictionary keys and set elements. Immutability also makes string interning safe. Python can reuse the same string object for identical strings, because one reference cannot modify the object and unexpectedly affect another reference. This can reduce memory usage and sometimes improve performance."

@@ -1,2 +1,2 @@
-# Dev-Notes.
+ Dev-Notes.
 React/DSA/JS/Python

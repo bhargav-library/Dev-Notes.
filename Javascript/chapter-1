@@ -1,9 +1,7 @@
 
 1. What are the two phases of JavaScript code execution?
 
-Answer:
-
-JavaScript executes code in two phases:
+Answer:JavaScript executes code in two phases:
 
 Memory Creation Phase (Creation / Hoisting Phase):
 JS engine scans the code.

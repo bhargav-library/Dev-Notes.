@@ -1,3 +1,8 @@
 What is closure?
 
 => A function along with its lexical scope bundled together forms a closure.
+
+JavaScript uses lexical scoping, so when a variable is accessed, the engine searches the current lexical environment and then walks outward through 
+the scope chain until it finds the variable or reaches the global scope.
+
+And this exact mechanism is the foundation of closures.

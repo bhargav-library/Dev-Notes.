@@ -1,1 +1,3 @@
+What is closure?
 
+=> A function along with its lexical scope bundled together forms a closure.

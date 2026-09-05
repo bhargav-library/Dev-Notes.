@@ -1,1 +1,62 @@
 Closures with setTimeout in a for Loop
+
+1. var — All callbacks share the same variable
+
+Example
+
+for (var i = 1; i <= 3; i++) {
+
+    setTimeout(function () {
+        console.log(i);
+    }, 1000);
+
+}
+
+Output
+4
+4
+4
+
+How it works
+
+var is function-scoped, so the loop has only one i variable.
+
+During the loop:
+
+Iteration 1 → i = 1 → callback 1 created
+Iteration 2 → i = 2 → callback 2 created
+Iteration 3 → i = 3 → callback 3 created
+
+After the third iteration:
+
+i++
+
+makes:
+
+i = 4
+
+Then:
+
+4 <= 3
+
+is false, so the loop ends.
+
+The callbacks haven't executed yet because setTimeout schedules them for later.
+
+After approximately 1 second, the callbacks execute.
+
+All three callbacks have a closure over the same i variable:
+
+callback 1 ──┐
+callback 2 ──┼──→ same i → 4
+callback 3 ──┘
+
+Therefore:
+
+4
+4
+4
+
+Important point
+
+A closure captures the variable/binding, not a snapshot of its value at the moment the callback was created.

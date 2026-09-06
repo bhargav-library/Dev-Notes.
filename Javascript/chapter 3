@@ -60,3 +60,55 @@ Therefore:
 Important point
 
 A closure captures the variable/binding, not a snapshot of its value at the moment the callback was created.
+
+
+
+2. let — Each iteration gets a separate binding
+Example
+for (let i = 1; i <= 3; i++) {
+
+    setTimeout(function () {
+        console.log(i);
+    }, 1000);
+
+}
+Output
+1
+2
+3
+How it works
+
+Unlike var, let is block-scoped.
+
+In a for loop, JavaScript creates a separate binding for i for each iteration.
+
+Conceptually:
+
+Iteration 1:
+i₁ = 1
+callback 1 → i₁
+
+Iteration 2:
+i₂ = 2
+callback 2 → i₂
+
+Iteration 3:
+i₃ = 3
+callback 3 → i₃
+
+So the closures look like:
+
+callback 1 → i₁ → 1
+
+callback 2 → i₂ → 2
+
+callback 3 → i₃ → 3
+
+When the callbacks execute:
+
+1
+2
+3
+Important point
+
+let creates a new lexical binding for each iteration of the for loop, allowing each callback to close over a different i.

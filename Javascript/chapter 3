@@ -112,3 +112,36 @@ When the callbacks execute:
 Important point
 
 let creates a new lexical binding for each iteration of the for loop, allowing each callback to close over a different i.
+
+
+3. IIFE — Create a new variable for every iteration
+
+Before let was introduced, developers commonly solved the var problem using an IIFE (Immediately Invoked Function Expression).
+
+Example
+for (var i = 1; i <= 3; i++) {
+
+    (function (j) {
+
+        setTimeout(function () {
+            console.log(j);
+        }, 1000);
+
+    })(i);
+
+}
+Output
+1
+2
+3
+How does the IIFE solve it?
+
+This:
+
+(function (j) {
+    // code
+})(i);
+
+means:
+
+Immediately execute this function and pass the current value of i into the parameter j.

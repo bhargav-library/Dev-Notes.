@@ -1,1 +1,17 @@
+1. Closures with Objects
 
+When a function returns an object containing methods, those methods form closures over the outer function's variables. 
+This allows the object's methods to share access to the same private state.
+
+function createCounter() {
+  let count = 0;
+  return {
+    increment: function() { count++; return count; },
+    decrement: function() { count--; return count; },
+    getCount: function()  { return count; }
+  };
+}
+
+const counter = createCounter();
+console.content(counter.increment()); // 1
+console.content(counter.decrement()); // 0

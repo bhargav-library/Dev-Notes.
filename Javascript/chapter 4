@@ -19,3 +19,21 @@ console.content(counter.decrement()); // 0
 2. In JavaScript, variables local to a function are usually destroyed (garbage collected) after the function finishes running. 
 However, a closure prevents this. Because the inner function maintains a reference to the outer function's variables, the JavaScript 
 engine keeps those variables alive in memory as long as the inner function exists.
+
+3. Data Privacy (Private Variables)
+Before ES6 classes introduced private fields (#), closures were the primary way to create truly private variables in
+JavaScript. The variables exist only inside the outer function's scope, making it impossible to access or modify them directly from the outside. 
+They can only be altered through the returned inner functions (privileged methods).
+
+function BankAccount(initialBalance) {
+  let balance = initialBalance; // Private variable
+
+  return {
+    deposit: function(amount) { balance += amount; },
+    getBalance: function() { return balance; }
+  };
+}
+
+const myAccount = BankAccount(100);
+console.log(myAccount.balance); // undefined - truly private!
+console.log(myAccount.getBalance()); // 100

@@ -8,7 +8,7 @@ JS engine scans the code.
 It allocates memory for variables and functions.
 Functions are stored entirely; variables (var) are initialized to undefined, while let and const are hoisted but uninitialized.
 
-Code Execution Phase:
+Code Execution Phase which is also called thread of execution:
 Code runs line by line.
 Variables get their assigned values.
 Functions are executed.
@@ -39,7 +39,12 @@ let and const (introduced in ES6) are block-scoped and safer.
   
 }
 
-let and const are stored in a different global lexical environment/binding, rather than simply saying they have "their own separate memory."
+what is hoisting in javascript?
+
+=> Hoisting is a javascript behaviour of making variables and functions available in memory for code execution.
+
+
+**let and const are stored in a different global lexical environment/binding, rather than simply saying they have "their own separate memory."
 
 Conceptually, the browser's global environment looks something like:
 

@@ -38,3 +38,17 @@ let and const (introduced in ES6) are block-scoped and safer.
   console.log(a); // ✅ 10
   
 }
+
+let and const are stored in a different global lexical environment/binding, rather than simply saying they have "their own separate memory."
+
+Conceptually, the browser's global environment looks something like:
+
+Global Environment
+│
+├── Object Environment
+│     └── window
+│          └── a → 10       // var
+│
+└── Declarative/Lexical Environment
+       ├── b → 20           // let
+       └── c → 30           // const

@@ -1,4 +1,4 @@
-What is Memoization?
+1.What is Memoization?
 
 Memoization means: Calculate something once, remember the answer, and reuse it when the same input comes again.
 
@@ -18,3 +18,7 @@ function memoizeSquare() {
 }
 
 const square = memoizeSquare();
+
+2. Currying
+Currying is a functional programming technique where a function that takes multiple arguments is transformed
+into a series of functions that each take a single argument. Each returned function forms a closure that "remembers" the arguments passed to the previous functions.

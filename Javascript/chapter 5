@@ -22,3 +22,26 @@ const square = memoizeSquare();
 2. Currying
 Currying is a functional programming technique where a function that takes multiple arguments is transformed
 into a series of functions that each take a single argument. Each returned function forms a closure that "remembers" the arguments passed to the previous functions.
+
+i) function curryAdd(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c; // Forms a closure over 'a' and 'b'
+    };
+  };
+}
+
+console.log(curryAdd(1)(2)(3)); // 6
+
+
+ii) function log(level) {
+    return function(message) {
+        console.log(`[${level}] ${message}`);
+    };
+}
+
+const errorLog = log("ERROR");
+const infoLog = log("INFO");
+
+errorLog("Database connection failed");
+infoLog("Server started");

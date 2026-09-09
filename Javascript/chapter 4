@@ -38,3 +38,35 @@ console.log(myAccount.getBalance()); // 100
 
 4. The Module Pattern is simply a way to keep some data private and expose only the functions you want others to use.
 Module Pattern prevents global namespace pollution by putting related variables and functions inside one module instead of creating many global variables.
+
+Closure itself provides the ability to preserve/access private data, and the Module Pattern uses closures to implement data privacy and organization.
+
+
+Closure
+   ↓
+Keeps access to outer variables
+   ↓
+Can be used for data privacy
+   ↓
+Module Pattern is one way to use it
+
+For example:
+
+function createAccount() {
+    let balance = 1000;
+
+    return {
+        getBalance() {
+            return balance;
+        }
+    };
+}
+
+Here:
+
+balance → private
+getBalance() → public
+getBalance() can still access balance → closure
+Structuring the code this way → Module Pattern
+
+So yes, data privacy is one important practical use of closures, and the Module Pattern is one pattern built using closures.

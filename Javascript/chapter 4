@@ -69,4 +69,4 @@ getBalance() → public
 getBalance() can still access balance → closure
 Structuring the code this way → Module Pattern
 
-So yes, data privacy is one important practical use of closures, and the Module Pattern is one pattern built using closures.
+data privacy is one important practical use of closures, and the Module Pattern is one pattern built using closures.

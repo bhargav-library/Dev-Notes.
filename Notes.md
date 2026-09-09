@@ -18,6 +18,8 @@ Array : An array is a data structure that stores elements in contiguous memory l
 Functions are block of codes designed to perform a specific task, and can be reused whenever needed.
 
 
-Python
+***What does ${} mean?
 
-Strings are immutable in Python, so their contents cannot be changed after creation. Any operation that appears to modify a string creates a new string object instead. This immutability gives us some advantages. Since the value of the string cannot change, its hash value can remain stable, which makes strings hashable and allows them to be used as dictionary keys and set elements. Immutability also makes string interning safe. Python can reuse the same string object for identical strings, because one reference cannot modify the object and unexpectedly affect another reference. This can reduce memory usage and sometimes improve performance.
+Inside a template literal (backticks `), ${...} means:
+
+Evaluate this JavaScript expression and insert its value here.

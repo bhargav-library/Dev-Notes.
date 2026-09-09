@@ -1,0 +1,3 @@
+What is Memoization?
+
+Memoization means: Calculate something once, remember the answer, and reuse it when the same input comes again.

@@ -1,3 +1,20 @@
 What is Memoization?
 
 Memoization means: Calculate something once, remember the answer, and reuse it when the same input comes again.
+
+function memoizeSquare() {
+    const cache = {};
+
+    return function (n) {
+        if (cache[n]) {
+            return cache[n];
+        }
+
+        const result = n * n;
+        cache[n] = result;
+
+        return result;
+    };
+}
+
+const square = memoizeSquare();

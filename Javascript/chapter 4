@@ -35,3 +35,5 @@ function BankAccount(initialBalance) {
 const myAccount = BankAccount(100);
 console.log(myAccount.balance); // undefined - truly private!
 console.log(myAccount.getBalance()); // 100
+
+4. The Module Pattern is simply a way to keep some data private and expose only the functions you want others to use.

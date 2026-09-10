@@ -47,3 +47,30 @@ const greet = function sayHello() {
     console.log("Hello");
 };
 
+
+
+An arrow function is simply a shorter way of writing a function in JavaScript.
+
+1. Normal function
+function add(a, b) {
+    return a + b;
+}
+
+The same function using an arrow function:
+
+const add = (a, b) => {
+    return a + b;
+};
+
+So:
+
+function add(a, b) { ... }
+        ↓
+const add = (a, b) => { ... };
+2. Even shorter
+
+If the function has only one expression, you can remove {} and return:
+
+const add = (a, b) => a + b;
+
+This automatically returns a + b.

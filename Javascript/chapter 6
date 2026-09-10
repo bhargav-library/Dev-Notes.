@@ -37,3 +37,13 @@ setTimeout(function() {
 A function declaration defines a function using the function keyword with a name. A function expression creates a function as part of 
 an expression, commonly by assigning it to a variable. A function expression can be anonymous or named. An anonymous function is simply a function without a name.
 
+// Anonymous function expression
+const greet = function() {
+    console.log("Hello");
+};
+
+// Named function expression
+const greet = function sayHello() {
+    console.log("Hello");
+};
+

@@ -1,1 +1,8 @@
+1. Function Statement / Function Declaration
+
+A function declaration is the traditional way of defining a function:
+
+function greet() {
+    console.log("Hello");
+}
 

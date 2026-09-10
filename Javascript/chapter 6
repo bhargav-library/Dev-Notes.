@@ -6,3 +6,31 @@ function greet() {
     console.log("Hello");
 }
 
+2. Function Expression
+
+A function expression is when a function is created as part of an expression, commonly by assigning it to a variable:
+
+const greet = function() {
+    console.log("Hello");
+};
+
+3. Anonymous Function :An anonymous function is simply a function without a name:
+
+function() {
+    console.log("Hello");
+}
+
+By itself, this is invalid as a standalone statement because JavaScript expects a function declaration there, and a function declaration needs a name.
+
+But it can be used where an expression is expected:
+
+const greet = function() {
+    console.log("Hello");
+};
+
+or:
+
+setTimeout(function() {
+    console.log("Hello");
+}, 1000);
+

@@ -74,3 +74,115 @@ If the function has only one expression, you can remove {} and return:
 const add = (a, b) => a + b;
 
 This automatically returns a + b.
+
+
+
+
+In JavaScript, functions are first-class citizens (or first-class functions). This means functions are treated just like any other value (such as numbers, strings, or objects).
+
+Because of this, you can:
+
+1. Assign a function to a variable
+const greet = function() {
+  console.log("Hello!");
+};
+
+greet(); // Hello!
+2. Pass a function as an argument
+
+Functions can be passed to other functions.
+
+function greet(name) {
+  return `Hello, ${name}`;
+}
+
+function processUser(callback) {
+  console.log(callback("Alice"));
+}
+
+processUser(greet); // Hello, Alice
+
+Here, greet is passed as an argument to processUser.
+
+3. Return a function from another function
+function multiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+const double = multiplier(2);
+
+console.log(double(5)); // 10
+
+This is the basis of closures.
+
+4. Store functions in objects or arrays
+const operations = {
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b
+};
+
+console.log(operations.add(5, 3)); // 8
+
+Or:
+
+const funcs = [
+  () => console.log("One"),
+  () => console.log("Two")
+];
+
+funcs[0](); // One
+5. Assign functions to another variable
+function sayHi() {
+  console.log("Hi");
+}
+
+const anotherReference = sayHi;
+
+anotherReference(); // Hi
+
+Notice we assign sayHi, not sayHi(). The first is the function itself, while the second calls the function.
+
+Why are first-class functions useful?
+
+They enable powerful programming patterns such as:
+
+Callbacks
+
+setTimeout(() => {
+  console.log("Executed after 1 second");
+}, 1000);
+
+Higher-order functions (functions that accept or return other functions)
+
+const numbers = [1, 2, 3];
+
+const doubled = numbers.map(num => num * 2);
+
+console.log(doubled); // [2, 4, 6]
+Closures
+Function composition
+Event handling
+Middleware (commonly used in frameworks like Express)
+Easy way to remember
+
+Think of a function as just another value.
+
+Just as you can do this:
+
+const age = 25;
+
+You can also do this:
+
+const greet = () => console.log("Hello");
+
+Since JavaScript treats functions like values, they can be:
+
+✅ Stored in variables
+✅ Passed as arguments
+✅ Returned from other functions
+✅ Stored in objects and arrays
+✅ Assigned to other variables
+
+This ability is what makes functions first-class functions in JavaScript.

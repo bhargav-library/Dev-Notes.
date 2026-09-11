@@ -26,3 +26,8 @@ Evaluate this JavaScript expression and insert its value here.
 
 // Parameter = the variable written in the function definition.
 // Argument = the actual value you pass when calling the function.
+
+
+// undefined → JavaScript says: "There's no value here yet."
+
+null      → You say: "I deliberately want this to have no value."

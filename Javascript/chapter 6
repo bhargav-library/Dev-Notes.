@@ -78,7 +78,8 @@ This automatically returns a + b.
 
 
 
-In JavaScript, functions are first-class citizens (or first-class functions). This means functions are treated just like any other value (such as numbers, strings, or objects).
+In JavaScript, functions are first-class citizens (or first-class functions). This means functions are treated just like any other value 
+(such as numbers, strings, or objects).
 
 Because of this, you can:
 

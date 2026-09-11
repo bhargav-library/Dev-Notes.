@@ -23,3 +23,6 @@ Functions are block of codes designed to perform a specific task, and can be reu
 Inside a template literal (backticks `), ${...} means:
 
 Evaluate this JavaScript expression and insert its value here.
+
+// Parameter = the variable written in the function definition.
+// Argument = the actual value you pass when calling the function.

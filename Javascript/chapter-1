@@ -73,3 +73,9 @@ It also allows redeclaration of the same variable making accidental overwrites p
 
 In loops, var creates one shared variable for all iterations, often leading to incorrect results 
 in asynchronous code. Also var becomes properties of the global object (window in browsers) which can pollute the global namespace.
+
+// We group multiple statements in a block so that we can use it where javascript expect one statement.
+
+// Shadowing in js means when a variable with the same name is declared inside the inner scope, 
+it hides the variable from the outer scope inside that inner scope.
+

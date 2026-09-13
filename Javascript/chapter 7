@@ -14,4 +14,4 @@ function sayHello() {
 greet("John", sayHello);
 
 
-Here sayHello is a callback because it's a function passed as an argument and later called inside greet.
+Here sayHello is a callback because it's a function passed as an argument and  called inside greet.

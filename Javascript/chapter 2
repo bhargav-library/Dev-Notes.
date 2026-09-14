@@ -1,4 +1,4 @@
-What is closure?
+1. What is closure?
 
 => A function along with its lexical scope bundled together forms a closure.
 
@@ -6,3 +6,16 @@ JavaScript uses lexical scoping, so when a variable is accessed, the engine sear
 the scope chain until it finds the variable or reaches the global scope.
 
 And this exact mechanism is the foundation of closures.
+
+
+2. In JavaScript, an event listener is a mechanism that tells JavaScript:
+
+“Watch for a particular event, and when it happens, run this function.”
+
+For example, you can listen for a button click.
+
+Basic example
+const button = document.querySelector("button");
+
+button.addEventListener("click", function () {
+    console.log("Button was clicked!");

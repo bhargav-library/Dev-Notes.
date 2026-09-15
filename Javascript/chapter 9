@@ -1,1 +1,68 @@
+Higher-Order Functions (HOFs) in JavaScript
 
+A higher-order function is a function that does at least one of these:
+
+Takes another function as an argument, or
+Returns another function
+
+This is possible because JavaScript treats functions as first-class citizens — functions can be stored in variables, passed as arguments, and returned from other functions.
+
+1. Function taking another function
+function greet(name) {
+    return `Hello ${name}`;
+}
+
+function processUser(callback) {
+    return callback("Bhargav");
+}
+
+processUser(greet);
+
+Here, processUser is a higher-order function because it receives greet as an argument.
+
+The function passed to a higher-order function is commonly called a callback function.
+
+2. Function returning another function
+function multiplier(x) {
+    return function(y) {
+        return x * y;
+    };
+}
+
+const double = multiplier(2);
+
+console.log(double(5)); // 10
+
+Here, multiplier is a higher-order function because it returns another function.
+
+This also demonstrates a closure because the returned function remembers x.
+
+Common built-in HOFs
+
+JavaScript's array methods are full of higher-order functions:
+
+const numbers = [1, 2, 3, 4];
+
+numbers.map(num => num * 2);
+numbers.filter(num => num > 2);
+numbers.reduce((sum, num) => sum + num, 0);
+numbers.forEach(num => console.log(num));
+
+For example:
+
+numbers.map(num => num * 2);
+
+map() is a higher-order function because it accepts a function as an argument.
+
+The arrow function:
+
+num => num * 2
+
+is the callback.
+
+Interview-ready answer
+
+A higher-order function is a function that either accepts another function as an argument, returns a function, or both. JavaScript supports higher-order functions because functions are first-class citizens. Common examples include map(), filter(), reduce(), and forEach().
+
+Important distinction:
+Every callback is not necessarily a higher-order function. The function receiving or returning the function is the higher-order function.

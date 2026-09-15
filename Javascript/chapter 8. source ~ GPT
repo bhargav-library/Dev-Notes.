@@ -1,0 +1,119 @@
+So I want to discuss about this topic of event listeners and garbage collectors in JavaScript.
+Because event listeners are heavy and they consume memory, if we remove those event listeners,
+it will remove all the variables and other things that they are holding because of closure, and it will free up some space.
+
+Yes — your understanding is mostly correct, but there is one important correction:
+
+Event listeners themselves aren't necessarily "heavy." The important issue is that an event listener can keep references
+to objects alive through its callback/closure.
+
+Let's break it down.
+
+1. Suppose we have this
+function setup() {
+  const element = document.getElementById("btn");
+
+  const user = {
+    name: "Bhargav"
+  };
+
+  element.addEventListener("click", function () {
+    console.log(element.id);
+    console.log(user.name);
+  });
+}
+
+The callback forms a closure over element and user.
+
+Conceptually:
+
+Event listener
+      ↓
+   callback
+      ↓
+   closure
+   ↙     ↘
+element   user
+
+So the callback has access to those variables even after setup() has finished executing.
+
+2. What happens when setup() finishes?
+
+Normally, you might think:
+
+"setup() finished, so its local variables should be garbage collected."
+
+But not necessarily.
+
+The browser still has the event listener registered:
+
+DOM element
+    ↓
+event listener
+    ↓
+callback
+    ↓
+closure
+ ↙       ↘
+element   user
+
+As long as those objects are still reachable, the garbage collector cannot remove them.
+
+3. Now suppose we remove the element
+element.remove();
+
+The element is no longer in the DOM.
+
+But if something still has a reference to the listener/callback, the closure may keep objects reachable.
+
+This is where memory leaks can happen.
+
+The important principle is:
+
+Garbage collection doesn't care whether something is in the DOM. It cares whether something is still reachable.
+
+4. What happens when we remove the listener?
+
+If we properly remove the listener:
+
+element.removeEventListener("click", handler);
+
+then the listener is no longer registered with the element.
+
+If nothing else references the callback, closure, user, or other captured objects, they become eligible for garbage collection.
+
+Before:
+
+element
+  ↓
+listener
+  ↓
+callback
+  ↓
+closure
+ ↙     ↘
+user   other objects
+
+
+After removeEventListener():
+
+(no references)
+      ↓
+eligible for garbage collection
+
+And then the garbage collector can eventually reclaim that memory.
+
+One very important distinction
+
+removeEventListener() does not directly delete variables from memory.
+
+It simply removes the event listener reference.
+
+Then, if that was the last reference keeping certain objects alive, those objects become eligible for garbage collection.
+
+So your statement can be refined to:
+
+Removing an event listener can allow the callback's closure and the objects it references to become garbage-collectable,
+  provided there are no other references to them.
+
+That's the key concept you should remember for interviews.

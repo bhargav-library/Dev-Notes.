@@ -5,7 +5,8 @@ A higher-order function is a function that does at least one of these:
 Takes another function as an argument, or
 Returns another function
 
-This is possible because JavaScript treats functions as first-class citizens — functions can be stored in variables, passed as arguments, and returned from other functions.
+This is possible because JavaScript treats functions as first-class citizens — functions can be stored in variables,
+passed as arguments, and returned from other functions.
 
 1. Function taking another function
 function greet(name) {
@@ -62,7 +63,8 @@ is the callback.
 
 Interview-ready answer
 
-A higher-order function is a function that either accepts another function as an argument, returns a function, or both. JavaScript supports higher-order functions because functions are first-class citizens. Common examples include map(), filter(), reduce(), and forEach().
+A higher-order function is a function that either accepts another function as an argument, returns a function, or both.
+JavaScript supports higher-order functions because functions are first-class citizens. Common examples include map(), filter(), reduce(), and forEach().
 
 Important distinction:
 Every callback is not necessarily a higher-order function. The function receiving or returning the function is the higher-order function.

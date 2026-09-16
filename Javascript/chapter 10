@@ -37,3 +37,5 @@ Output:
 Think:
 
 filter → "Keep only the elements I want"
+
+3. Reduce is an array method that processes each element and accumulates the result into a single final value.

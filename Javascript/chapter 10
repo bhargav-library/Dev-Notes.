@@ -1,0 +1,3 @@
+Callback hell occurs when multiple asynchronous operations are nested inside each other using callbacks,
+especially when each operation depends on the previous one. This creates deeply nested code, often called the Pyramid of Doom,
+which becomes difficult to read, maintain, debug, and handle errors in. Promises and async/await provide cleaner ways to handle such asynchronous operations.

@@ -1,3 +1,39 @@
-Callback hell occurs when multiple asynchronous operations are nested inside each other using callbacks,
+//Callback hell occurs when multiple asynchronous operations are nested inside each other using callbacks,
 especially when each operation depends on the previous one. This creates deeply nested code, often called the Pyramid of Doom,
 which becomes difficult to read, maintain, debug, and handle errors in. Promises and async/await provide cleaner ways to handle such asynchronous operations.
+
+1. map() — Transform every element
+
+map() creates a new array by applying a function to every element.
+
+const doubled = numbers.map((num) => {
+    return num * 2;
+});
+
+console.log(doubled);
+
+Output:
+
+[2, 4, 6, 8, 10]
+
+Think:
+
+map → "Change every element"
+
+2. filter() — Select elements
+
+filter() creates a new array containing only the elements that satisfy a condition.
+
+const evenNumbers = numbers.filter((num) => {
+    return num % 2 === 0;
+});
+
+console.log(evenNumbers);
+
+Output:
+
+[2, 4]
+
+Think:
+
+filter → "Keep only the elements I want"

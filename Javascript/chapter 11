@@ -1,0 +1,66 @@
+Inversion of Control (IoC) in JavaScript means:
+
+You give control of when and how your function is executed to another function or system.
+
+This is one of the important problems associated with callbacks.
+
+Simple example
+function fetchData(callback) {
+    // Some asynchronous operation
+    setTimeout(() => {
+        callback("Data received");
+    }, 2000);
+}
+
+fetchData((data) => {
+    console.log(data);
+});
+
+Here, you don't decide when the callback runs.
+
+You give your callback to fetchData():
+
+(data) => {
+    console.log(data);
+}
+
+And fetchData() decides:
+
+when to call it
+whether to call it
+potentially how many times to call it
+what data to pass to it
+
+That's Inversion of Control.
+
+Why is it called "inversion"?
+
+Normally, you might think:
+
+My code → controls → when function executes
+
+With a callback:
+
+My code → gives function → to another function
+                         ↓
+                  controls execution
+
+The control has effectively been handed over.
+
+Real-world analogy
+
+Imagine you give your phone to a delivery company and say:
+
+"Call me when my package arrives."
+
+You no longer control when they call you.
+
+The delivery company controls that.
+
+Similarly:
+
+setTimeout(() => {
+    console.log("Done");
+}, 2000);
+
+You provide the callback, but setTimeout controls when it executes.

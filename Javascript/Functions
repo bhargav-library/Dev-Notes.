@@ -1,0 +1,81 @@
+1. Function Statement / Function Declaration
+
+A function declaration is the traditional way of defining a function:
+
+function greet() {
+    console.log("Hello");
+}
+
+2. Function Expression
+
+A function expression is when a function is created as part of an expression, commonly by assigning it to a variable:
+
+const greet = function() {
+    console.log("Hello");
+};
+
+3. Anonymous Function :An anonymous function is simply a function without a name:
+
+function() {
+    console.log("Hello");
+}
+
+By itself, this is invalid as a standalone statement because JavaScript expects a function declaration there, and a function declaration needs a name.
+
+But it can be used where an expression is expected:
+
+const greet = function() {
+    console.log("Hello");
+};
+
+or:
+
+setTimeout(function() {
+    console.log("Hello");
+}, 1000);
+
+A function declaration defines a function using the function keyword with a name. A function expression creates a function as part of 
+an expression, commonly by assigning it to a variable. A function expression can be anonymous or named. An anonymous function is simply a function without a name.
+
+// Anonymous function expression
+const greet = function() {
+    console.log("Hello");
+};
+
+// Named function expression
+const greet = function sayHello() {
+    console.log("Hello");
+};
+
+
+
+An arrow function is simply a shorter way of writing a function in JavaScript.
+
+1. Normal function
+function add(a, b) {
+    return a + b;
+}
+
+The same function using an arrow function:
+
+const add = (a, b) => {
+    return a + b;
+};
+
+So:
+
+function add(a, b) { ... }
+        ↓
+const add = (a, b) => { ... };
+
+2. Even shorter
+
+If the function has only one expression, you can remove {} and return:
+
+const add = (a, b) => a + b;
+
+This automatically returns a + b.
+
+
+
+

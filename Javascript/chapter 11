@@ -1,4 +1,35 @@
-Inversion of Control (IoC) in JavaScript means:
+1. Callback Hell is a situation in JavaScript where multiple asynchronous callbacks are nested inside one another,
+   making the code hard to read, maintain, and debug.
+
+A good example is an e-commerce order process:
+
+Suppose a user places an order. First, we need to create the order, then process the payment, then update the inventory, 
+and finally send a confirmation email. If each operation depends on the previous one and is written using callbacks, we can 
+end up with deeply nested callbacks. This is called callback hell.
+
+placeOrder(cart, (order) => {
+    processPayment(order, (payment) => {
+        updateInventory(order, (inventory) => {
+            sendConfirmationEmail(order, (email) => {
+                console.log("Order completed");
+            });
+        });
+    });
+});
+
+Why is this callback hell?
+
+Because each operation depends on the result of the previous operation, so callbacks become nested inside callbacks:
+
+placeOrder
+   ↓
+ processPayment
+      ↓
+   updateInventory
+         ↓
+      sendEmail
+
+2. Inversion of Control (IoC) in JavaScript means:
 
 You give control of when and how your function is executed to another function or system.
 
@@ -47,20 +78,3 @@ My code → gives function → to another function
 
 The control has effectively been handed over.
 
-Real-world analogy
-
-Imagine you give your phone to a delivery company and say:
-
-"Call me when my package arrives."
-
-You no longer control when they call you.
-
-The delivery company controls that.
-
-Similarly:
-
-setTimeout(() => {
-    console.log("Done");
-}, 2000);
-
-You provide the callback, but setTimeout controls when it executes.

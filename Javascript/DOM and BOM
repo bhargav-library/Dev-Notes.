@@ -1,1 +1,74 @@
+1. BOM — Browser Object Model
+
+The Browser Object Model allows JavaScript to interact with the browser itself, outside the webpage's HTML.
+
+The main object is:
+
+window
+
+Examples:
+
+window.alert("Hello");
+window.location.href = "https://google.com";
+window.history.back();
+window.innerWidth;
+window.navigator.userAgent;
+
+Common BOM-related objects/APIs include:
+
+window
+location
+history
+navigator
+screen
+browser dialogs such as alert(), confirm(), prompt()
+
+Think:
+
+Browser
+   │
+   └── window
+        ├── location
+        ├── history
+        ├── navigator
+        └── screen
+2. DOM — Document Object Model
+
+The Document Object Model represents the HTML document as a tree of objects.
+
+For example, this HTML:
+
+<html>
+  <body>
+    <h1>Hello</h1>
+    <button>Click</button>
+  </body>
+</html>
+
+is represented roughly like:
+
+Document
+   │
+   └── html
+        │
+        └── body
+             ├── h1
+             │    └── "Hello"
+             │
+             └── button
+                  └── "Click"
+
+JavaScript can manipulate this tree:
+
+const heading = document.querySelector("h1");
+
+heading.textContent = "Hello Bhargav";
+
+Or:
+
+document.body.style.backgroundColor = "black";
+
+So:
+
+DOM is mainly about manipulating the webpage/document.
 

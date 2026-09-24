@@ -1,1 +1,110 @@
+1. How do we define parameter types in TypeScript?
 
+We use type annotations to specify the expected type of each parameter.
+
+function add(a: number, b: number) {
+    return a + b;
+}
+
+2. What is a return type in TypeScript?
+
+A return type specifies the type of value a function should return. It is declared after the parameter list.
+
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+3. Is it mandatory to specify a function's return type?
+
+No. TypeScript can often infer the return type automatically.
+
+function multiply(a: number, b: number) {
+    return a * b;
+}
+
+The inferred return type is number.
+
+4. What is void in TypeScript?
+
+void is commonly used for functions that do not return a meaningful value.
+
+function greet(name: string): void {
+    console.log(name);
+}
+
+5. What are optional parameters?
+
+Optional parameters are parameters that may be omitted when calling a function. We use ? to declare them.
+
+function greet(name: string, age?: number) {
+    console.log(name, age);
+}
+
+greet("Bhargav");
+greet("Bhargav", 27);
+
+Inside the function, age has the type number | undefined.
+
+6. What are default parameters?
+
+Default parameters provide a value when an argument is omitted or explicitly passed as undefined.
+
+function greet(name: string = "Guest") {
+    console.log(name);
+}
+
+greet();          // Guest
+greet("Bhargav"); // Bhargav
+function welcome(age: number = 18) {}
+
+7. What are rest parameters in TypeScript?
+
+Rest parameters allow a function to accept multiple arguments as an array.
+
+function sum(...numbers: number[]): number {
+    return numbers.reduce((a, b) => a + b, 0);
+}
+
+sum(10, 20, 30); // 60
+
+9. What is a function type?
+
+A function type defines the types of a function's parameters and its return value.
+
+let add: (a: number, b: number) => number;
+
+add = (a, b) => a + b;
+
+The function must accept two numbers and return a number.
+
+10. What is a callback function type?
+
+A callback function type specifies the expected signature of a function passed as an argument.
+
+function calculate(
+    a: number,
+    b: number,
+    callback: (x: number, y: number) => number
+): number {
+    return callback(a, b);
+}
+
+calculate(10, 20, (x, y) => x + y);
+11. Can a function's parameter type and return type be different?
+
+Yes. Parameter types and return types are independent.
+
+function getAge(age: number): string {
+    return `Age: ${age}`;
+}
+
+The parameter is a number, but the return type is a string.
+
+12. When should we explicitly specify a function's return type?
+
+Explicit return types are useful when defining public APIs, documenting a function's intended output or ensuring that future changes don't accidentally
+alter its return type.
+
+function getUserName(id: number): string {
+    return "Bhargav";
+}

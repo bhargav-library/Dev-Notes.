@@ -1,1 +1,114 @@
+TypeScript — Revision Questions
 
+
+1. What is TypeScript?
+
+Answer: TypeScript is a superset of JavaScript that adds a static type system to JavaScript.
+
+2. What is the main difference between JavaScript and TypeScript?
+
+Answer: JavaScript is dynamically typed, while TypeScript allows static type checking during development/compilation.
+
+3. What does "static typing" mean?
+
+Answer: Types are checked before the program runs, helping catch type-related errors early.
+
+let age: number = 27;
+
+age = "hello"; // ❌
+
+4. Does the browser directly execute TypeScript?
+
+Answer: No. TypeScript is compiled/transformed into JavaScript, which the browser or Node.js executes.
+
+TypeScript → Compiler → JavaScript → Runtime
+
+5. What is a type annotation?
+
+Answer: Explicitly telling TypeScript the type of a variable.
+
+let age: number = 27;
+
+6. What are the three basic types we learned?
+
+Answer:
+
+string
+number
+boolean
+let name: string = "Bhargav";
+let age: number = 27;
+let active: boolean = true;
+
+7. What is type inference?
+
+Answer: TypeScript automatically determines a variable's type from its value or context.
+
+let age = 27; // TypeScript infers number
+
+8. Do we always need to explicitly specify types?
+
+Answer: No. If TypeScript can clearly infer the type, explicit annotation is usually unnecessary.
+
+let name = "Bhargav"; // inferred as string
+
+9. When should we explicitly specify a type?
+
+Answer: When TypeScript cannot clearly determine the intended type or when explicitly documenting the type improves clarity.
+
+Common examples:
+
+function greet(name: string) {}
+let users: string[] = [];
+
+10. Why do function parameters often need type annotations?
+
+Answer: A parameter doesn't necessarily have a value that tells TypeScript what type it should be.
+
+function greet(name: string) {
+    console.log(name);
+}
+
+11. Does a function always need an explicit return type?
+
+Answer: No. TypeScript can often infer it.
+
+function add(a: number, b: number) {
+    return a + b;
+}
+
+TypeScript infers the return type as number.
+
+12. What does this mean?
+
+let age: number = 27;
+
+Answer: age → variable, number → type, 27 → value
+
+13. What is the difference between these?
+
+let age: number = 27;
+
+and
+
+let age = 27;
+
+Answer: Both result in age being a number. The first explicitly declares the type; the second relies on type inference.
+
+14. What is the general rule for type inference?
+
+Answer: If TypeScript can clearly determine the type, let it infer. If the intended type isn't clear, specify it.
+
+15. Why is this potentially unclear?
+
+let users = [];
+
+Answer: The intended element type isn't apparent. It could be string[], number[], User[], etc. In such cases, an explicit type can be useful.
+
+The one rule to remember
+
+Clear information available?
+        ↓
+      YES → Let TypeScript infer
+        ↓
+       NO → Specify the type

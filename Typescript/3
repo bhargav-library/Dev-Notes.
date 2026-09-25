@@ -34,3 +34,67 @@ interface User {
 }
 
 Any object declared as User must contain the required properties with the correct types.
+
+5. What are optional properties?
+
+Optional properties are properties that an object is not required to contain. We declare them using ?.
+
+interface User {
+    name: string;
+    age?: number;
+}
+
+const user: User = {
+    name: "Bhargav"
+};
+
+When accessing user.age, its type is number | undefined.
+
+6. What is the readonly modifier?
+
+The readonly modifier prevents a property from being reassigned through TypeScript's type system.
+
+interface User {
+    readonly id: number;
+    name: string;
+}
+
+const user: User = {
+    id: 101,
+    name: "Bhargav"
+};
+
+user.name = "John"; // Valid
+user.id = 102;      // Error
+
+It does not automatically make an object immutable at runtime.
+
+7. How do we extend an interface?
+
+We use the extends keyword to create an interface that inherits the properties of another interface.
+
+interface User {
+    name: string;
+}
+
+interface Admin extends User {
+    permissions: string[];
+}
+
+Admin now requires both name and permissions.
+
+8. What is declaration merging?
+
+Declaration merging occurs when TypeScript combines multiple compatible interface declarations with the same name in the same scope.
+
+interface User {
+    name: string;
+}
+
+interface User {
+    age: number;
+}
+
+The resulting User interface contains both name and age.
+
+Unlike interfaces, type aliases cannot be redeclared with the same name in the same scope.

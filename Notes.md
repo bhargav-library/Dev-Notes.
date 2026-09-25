@@ -27,3 +27,5 @@ Functions are block of codes designed to perform a specific task, and can be reu
 // undefined → JavaScript says: "There's no value here yet."
 
 null      → You say: "I deliberately want this to have no value."
+
+*** The main difference is that HashMap stores key-value pairs, whereas HashSet stores only unique individual elements.

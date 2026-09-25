@@ -1,0 +1,36 @@
+1. What is an object type in TypeScript?
+
+An object type defines the expected structure of an object, including its property names and types.
+
+const user: {
+    name: string;
+    age: number;
+} = {
+    name: "Bhargav",
+    age: 27
+};
+
+2. What is a type alias?
+
+A type alias allows us to give a reusable name to a type using the type keyword.
+
+type User = {
+    name: string;
+    age: number;
+};
+
+const user: User = {
+    name: "Bhargav",
+    age: 27
+};
+
+3. What is an interface in TypeScript?
+
+An interface defines a contract describing the structure an object must satisfy.
+
+interface User {
+    name: string;
+    age: number;
+}
+
+Any object declared as User must contain the required properties with the correct types.

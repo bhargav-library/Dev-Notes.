@@ -1,0 +1,52 @@
+1. What is a Union Type?
+
+A union type allows a variable to hold a value of more than one specified type. We use the | (pipe) symbol to define a union type.
+
+Think of | as OR.
+
+i. Without union types
+
+Suppose we declare a variable:
+
+let userId: number = 101;
+
+Now, if we try to assign a string:
+
+userId = "USER101"; // Error
+
+TypeScript reports an error because userId is declared as a number.
+
+But what if we want our user ID to accept both numbers and strings?
+
+ii. Using union types
+let userId: number | string;
+
+userId = 101;       // Valid
+userId = "USER101"; // Valid
+userId = true;      // Error
+
+Here, number | string means that userId can contain either a number or a string.
+
+2. Can a type alias represent a union type?
+
+Yes. A type alias can represent multiple possible types using the union operator |.
+
+type ID = string | number;
+
+let userId: ID = 101;
+userId = "USER101";
+
+Both assignments are valid.
+
+3. When should we use type and when should we use interface?
+
+Use interface when you want to define an extendable object contract. Use type when defining unions, tuples or other type expressions.
+
+For ordinary object structures, either is suitable. Consistency within a project is generally more important than choosing one exclusively.
+
+4. Difference betweeen type and interface.
+
+In TypeScript, both type and interface are used to define object structures. 
+However, type is more flexible because it supports union types and can combine multiple types using the intersection operator (&). On the other hand,
+interface uses the extends keyword for inheritance and supports
+declaration merging, which means multiple interfaces with the same name are automatically merged. A type does not support declaration merging.

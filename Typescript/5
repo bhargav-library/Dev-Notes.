@@ -1,0 +1,103 @@
+1. What is an intersection type in TypeScript?
+
+An intersection type combines multiple types into a single type using the & operator. The resulting type must satisfy all the combined types.
+
+type A = { name: string };
+type B = { age: number };
+
+type User = A & B;
+
+User requires both name and age.
+
+2. What is the difference between union and intersection types?
+
+In TypeScript, union (|) and intersection (&) types are used to combine multiple types. A union type works like an OR operator, meaning a value can 
+satisfy either type. For example, type ID = string | number allows a value to be either a string or a number. On the other hand, an intersection 
+type works like an AND operator, meaning a value must satisfy all combined types. For example, type Staff = User & Employee requires an object to have 
+all the properties of both User and Employee.
+
+
+3. Can we combine an existing type with an inline object type?
+
+Yes. We don't need to create a separate type alias for every object structure.
+
+type UserResponse = ApiResponse & {
+    data: UserData;
+};
+
+This combines the properties of ApiResponse with the inline object type.
+
+4. Can we combine more than two types using &?
+
+Yes. We can combine as many compatible types as needed.
+
+type Employee = User & Department & Salary;
+
+An Employee must satisfy all three types.
+
+5. What happens if two intersected types have conflicting properties?
+
+TypeScript combines their requirements. If a property must simultaneously be two incompatible types, such as string and number, its type becomes never.
+
+type A = { id: string };
+type B = { id: number };
+
+type C = A & B;
+
+No ordinary object can satisfy C because its id would need to be both a string and a number.
+
+6. What is the difference between using named types and inline object types with &?
+
+Both approaches can produce exactly the same result.
+
+Named types:
+
+type DataResponse = {
+    data: UserData;
+};
+
+type UserResponse = ApiResponse & DataResponse;
+
+Inline object type:
+
+type UserResponse = ApiResponse & {
+    data: UserData;
+};
+
+Named types are useful when you want to reuse the same structure elsewhere.
+
+7. Can we use intersection types with interfaces?
+
+Yes. We can combine interfaces using a type alias and the & operator.
+
+interface User {
+    name: string;
+}
+
+interface Admin {
+    permissions: string[];
+}
+
+type AdminUser = User & Admin;
+
+AdminUser requires both name and permissions.
+
+8. What is a real-world use case for intersection types?
+
+Intersection types are useful when extending shared data structures, such as API responses.
+
+type ApiResponse = {
+    status: number;
+    message: string;
+};
+
+type UserData = {
+    id: number;
+    name: string;
+};
+
+type UserResponse = ApiResponse & {
+    data: UserData;
+};
+
+The resulting response contains status, message and data.

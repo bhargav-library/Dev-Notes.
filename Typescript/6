@@ -1,0 +1,11 @@
+What is a literal type?
+A type that accepts one specific value.
+
+What is a literal union?
+A union of specific allowed values.
+
+Why use literal types?
+To restrict values and catch invalid assignments.
+
+What does as const do?
+Preserves literal types and makes object properties readonly at the type level.

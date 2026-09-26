@@ -1,11 +1,121 @@
-What is a literal type?
-A type that accepts one specific value.
+1. What is a literal type?
 
-What is a literal union?
-A union of specific allowed values.
+A literal type allows only one specific value.
 
-Why use literal types?
-To restrict values and catch invalid assignments.
+let role: "admin";
 
-What does as const do?
-Preserves literal types and makes object properties readonly at the type level.
+role = "admin"; // Valid
+role = "user";  // Error
+
+Here, role can only contain "admin".
+
+2. What is a literal union?
+
+A literal union allows multiple specific values using the | operator.
+
+type Role = "admin" | "user" | "guest";
+
+let role: Role;
+
+role = "admin";   // Valid
+role = "user";    // Valid
+role = "guest";   // Valid
+role = "manager"; // Error
+
+Only the three specified values are allowed.
+
+3. Why use literal types?
+
+Literal types restrict values and help catch invalid assignments.
+
+type Status = "pending" | "success" | "failed";
+
+function updateStatus(status: Status) {
+    console.log(status);
+}
+
+updateStatus("success"); // Valid
+updateStatus("failed");  // Valid
+updateStatus("done");    // Error
+
+Benefit: TypeScript catches invalid values before your code runs.
+
+4. What is the difference between string and "admin"?
+// General string type
+let username: string;
+
+username = "Bhargav"; // Valid
+username = "admin";   // Valid
+username = "123";     // Valid
+
+// Literal type
+let role: "admin";
+
+role = "admin"; // Valid
+role = "user";  // Error
+
+Key difference: string accepts any string, whereas "admin" accepts only that exact string.
+
+5. What does as const do?
+
+as const preserves literal types and makes object properties readonly at the type level.
+
+const user = {
+    name: "Bhargav",
+    role: "admin"
+} as const;
+
+user.role = "user"; // Error
+user.name = "Rahul"; // Error
+
+Without as const, TypeScript generally infers the properties as string, allowing reassignment.
+
+const user = {
+    name: "Bhargav",
+    role: "admin"
+};
+
+user.role = "user"; // Valid
+
+
+ as const provides compile-time protection. It does not freeze the object at runtime.
+what does it mean?
+
+It means as const prevents you from modifying values in TypeScript, but it doesn't actually lock the object in JavaScript.
+
+1. Compile-time protection
+const user = {
+    name: "Bhargav",
+    role: "admin"
+} as const;
+
+user.role = "guest"; // TypeScript error
+
+TypeScript detects the error before your code runs because role is readonly.
+
+2. Runtime protection
+
+When TypeScript is compiled into JavaScript, as const disappears.
+
+The resulting JavaScript is essentially:
+
+const user = {
+    name: "Bhargav",
+    role: "admin"
+};
+
+user.role = "guest"; // Works!
+console.log(user.role); // "guest"
+
+JavaScript doesn't know anything about as const.
+
+3. What if you actually want to prevent modifications?
+
+Use Object.freeze().
+
+const user = Object.freeze({
+    name: "Bhargav",
+    role: "admin"
+});
+
+user.role = "guest"; // TypeScript error

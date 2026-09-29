@@ -112,3 +112,13 @@ Clear information available?
       YES → Let TypeScript infer
         ↓
        NO → Specify the type
+
+
+In TypeScript, you specify the return type of a function by adding a colon (:) and the type right after the function's parameter parentheses ().
+While TypeScript is smart enough to guess (infer) the return type most of the time, explicitly writing it out helps prevent bugs and makes your code easier for others to read.
+Here is a basic example of a function that calculates a total price by adding tax to an amount:
+
+
+function calculateTotal(price: number, tax: number): number {
+  return price + tax;
+}

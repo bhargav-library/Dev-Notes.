@@ -7,7 +7,7 @@ Answer: TypeScript is a superset of JavaScript that adds a static type system to
 
 2. What is the main difference between JavaScript and TypeScript?
 
-Answer: JavaScript is dynamically typed, while TypeScript allows static type checking during development/compilation.
+Answer: JavaScript is dynamically typed, while TypeScript allows static type checking during development and compilation.
 
 3. What does "static typing" mean?
 

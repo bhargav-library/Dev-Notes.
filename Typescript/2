@@ -103,7 +103,7 @@ The parameter is a number, but the return type is a string.
 
 11. When should we explicitly specify a function's return type?
 
-Explicit return types are useful when defining public APIs, documenting a function's intended output or ensuring that future changes don't accidentally
+Explicit return types are useful when defining public APIs, documenting a function's intended output and ensuring that future changes don't accidentally
 alter its return type.
 
 function getUserName(id: number): string {

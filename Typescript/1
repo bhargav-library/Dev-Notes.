@@ -56,10 +56,7 @@ let name = "Bhargav"; // inferred as string
 
 Answer: When TypeScript cannot clearly determine the intended type or when explicitly documenting the type improves clarity.
 
-Common examples:
 
-function greet(name: string) {}
-let users: string[] = [];
 
 10. Why do function parameters often need type annotations?
 

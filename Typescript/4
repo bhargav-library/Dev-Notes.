@@ -1,6 +1,6 @@
 1. What is a Union Type?
 
-A union type allows a variable to hold a value of more than one specified type. We use the | (pipe) symbol to define a union type.
+A union type allows a variable to hold a value  more than one specified type. We use the | (pipe) symbol to define a union type.
 
 Think of | as OR.
 
@@ -48,5 +48,5 @@ For ordinary object structures, either is suitable. Consistency within a project
 
 In TypeScript, both type and interface are used to define object structures. 
 However, type is more flexible because it supports union types and can combine multiple types using the intersection operator (&). On the other hand,
-interface uses the extends keyword for inheritance and supports
-declaration merging, which means multiple interfaces with the same name are automatically merged. A type does not support declaration merging.
+interface uses the extends keyword for inheritance and supports declaration merging, which means multiple interfaces with the same name are automatically merged.
+A type does not support declaration merging.

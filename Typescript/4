@@ -50,3 +50,52 @@ In TypeScript, both type and interface are used to define object structures.
 However, type is more flexible because it supports union types and can combine multiple types using the intersection operator (&). On the other hand,
 interface uses the extends keyword for inheritance and supports declaration merging, which means multiple interfaces with the same name are automatically merged.
 A type does not support declaration merging.
+
+Use interface for object shapes, and type for everything else.
+
+1. Use interface for objects
+interface User {
+    name: string;
+    age: number;
+}
+
+Especially when you're defining the structure of a class/object or something that may be extended:
+interface Admin extends User {
+    permissions: string[];
+}
+
+2. Use type for unions
+type Status = "pending" | "success" | "error";
+
+Interfaces can't do this directly.
+3. Use type for primitives
+type ID = string | number;
+
+4. Use type for tuples
+type Point = [number, number];
+
+5. Use type when combining types
+type User = {
+    name: string;
+};
+
+type Admin = User & {
+    permissions: string[];
+};
+
+
+Simple rule
+// Object → interface
+interface User {
+    name: string;
+    age: number;
+}
+
+// Anything else → type
+type Status = "active" | "inactive";
+type ID = string | number;
+type Point = [number, number];
+
+One important point: There isn't a rule that says you must use interface for objects. type works perfectly well for objects too. 
+The distinction is mainly about the features and conventions you want.
+For your React/Node.js/TypeScript projects, this interface for object + type for unions/other types convention is a very good default.

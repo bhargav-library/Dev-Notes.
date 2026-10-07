@@ -1,0 +1,2 @@
+A React component is a reusable piece of UI, usually defined as a JavaScript function that returns JSX. Components help us break a complex UI into smaller,
+reusable and maintainable pieces. They can also manage or receive data through state and props, allowing the UI to update dynamically when the data changes.

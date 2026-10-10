@@ -1,1 +1,15 @@
+NestJS and Express are both used for building backend applications, but they differ in their approach.
 
+Express is a lightweight and flexible framework, whereas NestJS provides a more structured and opinionated architecture.
+
+I would prefer NestJS for large-scale applications because it provides built-in features such as dependency injection, modular architecture, decorators, 
+and support for TypeScript.
+
+These features make the code more maintainable, testable, and scalable as the application grows.
+
+NestJS also supports features such as guards, pipes, interceptors, and exception filters, which help us handle authentication, validation, 
+request processing, and errors in a consistent way.
+
+However, Express is an excellent choice for smaller applications or when we need maximum flexibility and minimal overhead.
+
+So, my choice would depend on the project's requirements, complexity, and team preferences.

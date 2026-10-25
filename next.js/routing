@@ -1,0 +1,116 @@
+# Next.js: File-Based Routing & Dynamic Routing
+
+## 1. What is File-Based Routing?
+
+**Interview Answer:**
+
+File-based routing in Next.js means that routes are automatically created based on the folder and file structure of the application. For example, creating an `about/page.tsx` file inside the `app` directory automatically creates the `/about` route. This eliminates the need for manual route configuration and also supports dynamic routing.
+
+**Example:**
+
+```text
+app/
+├── page.tsx
+├── about/
+│   └── page.tsx
+└── contact/
+    └── page.tsx
+```
+
+| File | Route |
+|---|---|
+| `app/page.tsx` | `/` |
+| `app/about/page.tsx` | `/about` |
+| `app/contact/page.tsx` | `/contact` |
+
+**Remember:**
+- The `app` directory contains your routes.
+- Folders define URL segments.
+- `page.tsx` defines the UI for a route.
+- Next.js automatically maps the file structure to URLs.
+
+## 2. What is Dynamic Routing?
+
+**Interview Answer:**
+
+Dynamic routing allows a single page to handle multiple URLs using dynamic values. In Next.js, we create dynamic routes using square brackets in the folder name, such as `[id]`. For example, `products/[id]/page.tsx` can handle `/products/1` and `/products/2`, displaying different product details based on the ID.
+
+**Example:**
+
+```text
+app/
+└── products/
+    └── [id]/
+        └── page.tsx
+```
+
+This creates a dynamic route that can match URLs such as:
+
+- `/products/1`
+- `/products/2`
+- `/products/iphone`
+
+**Example implementation:**
+
+```tsx
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  return <h1>Product: {id}</h1>;
+}
+```
+
+**Remember:**
+- `[id]` represents a dynamic URL segment.
+- `params` provides the value of that segment.
+- You can use that value to fetch data from a database or API.
+- One page can handle multiple product URLs.
+
+*Note: This code follows the current Next.js App Router convention, where `params` is a Promise.*
+
+## 3. What is the Difference Between File-Based Routing and Dynamic Routing?
+
+| File-Based Routing | Dynamic Routing |
+|---|---|
+| Routes are defined by the file and folder structure. | A route accepts varying URL values. |
+| Example: `app/about/page.tsx` | Example: `app/products/[id]/page.tsx` |
+| Creates the `/about` route. | Matches routes such as `/products/1` and `/products/2`. |
+| Can define static or dynamic routes. | Is one type of routing supported by Next.js. |
+
+**Important:** Dynamic routing is part of file-based routing in Next.js, not a completely separate routing system.
+
+## 4. Quick Interview Revision
+
+**Q: What is file-based routing?**
+
+Routes are automatically created based on the application's folder and file structure.
+
+Q: What is dynamic routing?**
+
+Dynamic routing allows a single page to handle different URLs using dynamic segments such as `[id]`.
+
+**Q: How do you create a route for an About page?**
+
+Create `app/about/page.tsx`. Next.js automatically maps it to `/about`.
+
+**Q: How do you create dynamic product routes?**
+
+Create `app/products/[id]/page.tsx`.
+
+**Q: Why is file-based routing useful?**
+
+It simplifies route management by eliminating the need to configure each route manually.
+
+---
+
+## Final Memory Trick
+
+- **File-based routing:** File structure determines the URL.
+- **Dynamic routing:** Square brackets allow a URL segment to vary.
+- **`page.tsx`:** Defines the page UI.
+- **`[id]`:** Represents a dynamic route parameter.
+- **`params`:** Gives you access to the dynamic parameter value.

@@ -1,21 +1,21 @@
-# Next.js: File-Based Routing & Dynamic Routing
+ Next.js: File-Based Routing & Dynamic Routing
 
-## 1. What is File-Based Routing?
+ 1. What is File-Based Routing?
 
-**Interview Answer:**
 
-File-based routing in Next.js means that routes are automatically created based on the folder and file structure of the application. For example, creating an `about/page.tsx` file inside the `app` directory automatically creates the `/about` route. This eliminates the need for manual route configuration and also supports dynamic routing.
+File-based routing in Next.js means that routes are automatically created based on the folder and file structure of the application. 
+For example, creating an `about/page.tsx` file inside the `app` directory automatically creates the `/about` route. 
+This eliminates the need for manual route configuration and also supports dynamic routing.
 
-**Example:**
 
-```text
+
 app/
 ├── page.tsx
 ├── about/
 │   └── page.tsx
 └── contact/
     └── page.tsx
-```
+
 
 | File | Route |
 |---|---|
@@ -23,26 +23,28 @@ app/
 | `app/about/page.tsx` | `/about` |
 | `app/contact/page.tsx` | `/contact` |
 
-**Remember:**
+
 - The `app` directory contains your routes.
 - Folders define URL segments.
 - `page.tsx` defines the UI for a route.
 - Next.js automatically maps the file structure to URLs.
 
-## 2. What is Dynamic Routing?
+ 2. What is Dynamic Routing?
 
-**Interview Answer:**
 
-Dynamic routing allows a single page to handle multiple URLs using dynamic values. In Next.js, we create dynamic routes using square brackets in the folder name, such as `[id]`. For example, `products/[id]/page.tsx` can handle `/products/1` and `/products/2`, displaying different product details based on the ID.
 
-**Example:**
+Dynamic routing allows a single page to handle multiple URLs using dynamic values. In Next.js, we create dynamic routes using square brackets 
+in the folder name, such as `[id]`. For example, `products/[id]/page.tsx` can handle `/products/1` and `/products/2`, displaying different 
+product details based on the ID.
 
-```text
+
+
+
 app/
 └── products/
     └── [id]/
         └── page.tsx
-```
+
 
 This creates a dynamic route that can match URLs such as:
 
@@ -62,9 +64,9 @@ export default async function ProductPage({
 
   return <h1>Product: {id}</h1>;
 }
-```
 
-**Remember:**
+
+
 - `[id]` represents a dynamic URL segment.
 - `params` provides the value of that segment.
 - You can use that value to fetch data from a database or API.
@@ -72,7 +74,7 @@ export default async function ProductPage({
 
 *Note: This code follows the current Next.js App Router convention, where `params` is a Promise.*
 
-## 3. What is the Difference Between File-Based Routing and Dynamic Routing?
+ 3. What is the Difference Between File-Based Routing and Dynamic Routing?
 
 | File-Based Routing | Dynamic Routing |
 |---|---|
@@ -81,33 +83,33 @@ export default async function ProductPage({
 | Creates the `/about` route. | Matches routes such as `/products/1` and `/products/2`. |
 | Can define static or dynamic routes. | Is one type of routing supported by Next.js. |
 
-**Important:** Dynamic routing is part of file-based routing in Next.js, not a completely separate routing system.
+ Dynamic routing is part of file-based routing in Next.js, not a completely separate routing system.
 
-## 4. Quick Interview Revision
+ 4. Quick Interview Revision
 
-**Q: What is file-based routing?**
+Q: What is file-based routing?
 
 Routes are automatically created based on the application's folder and file structure.
 
-Q: What is dynamic routing?**
+Q: What is dynamic routing?
 
 Dynamic routing allows a single page to handle different URLs using dynamic segments such as `[id]`.
 
-**Q: How do you create a route for an About page?**
+Q: How do you create a route for an About page?**
 
 Create `app/about/page.tsx`. Next.js automatically maps it to `/about`.
 
-**Q: How do you create dynamic product routes?**
+Q: How do you create dynamic product routes?**
 
 Create `app/products/[id]/page.tsx`.
 
-**Q: Why is file-based routing useful?**
+Q: Why is file-based routing useful?**
 
 It simplifies route management by eliminating the need to configure each route manually.
 
 ---
 
-## Final Memory Trick
+
 
 - **File-based routing:** File structure determines the URL.
 - **Dynamic routing:** Square brackets allow a URL segment to vary.

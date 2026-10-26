@@ -11,6 +11,7 @@ For example, you can build an e-commerce application using Next.js with:
 - Server-side data fetching.
 - API endpoints.
 - Search engine optimization.
+
 Q2. Why do we need Next.js when React already exists?
 React alone doesn't prescribe a complete application architecture.
 

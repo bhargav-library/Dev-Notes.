@@ -1,0 +1,64 @@
+Introduction to Next.js
+Q1. What is Next.js?
+Answer: Next.js is a React framework for building full-stack web applications.
+
+React primarily provides the UI layer, whereas Next.js adds features such as routing, server-side rendering, server components, and backend endpoints.
+
+For example, you can build an e-commerce application using Next.js with:
+- Product listing pages.
+- Dynamic product details.
+- User authentication.
+- Server-side data fetching.
+- API endpoints.
+- Search engine optimization.
+Q2. Why do we need Next.js when React already exists?
+React alone doesn't prescribe a complete application architecture.
+
+Next.js provides several additional capabilities:
+Feature	Purpose
+File-based routing	Creates routes from your project structure
+Server Components	Render components on the server by default
+Client Components	Support browser interactivity and React hooks
+Server-side rendering	Generate HTML on the server
+Static rendering	Generate pages ahead of requests when appropriate
+Route Handlers	Create backend HTTP endpoints
+Server Actions	Execute server-side functions from supported client interactions
+Metadata API	Configure page titles and SEO metadata
+Image optimization	Optimize images through the Next.js Image component
+
+
+Remember: Next.js is built on React. You still use React components, props, state, and hooks.
+Q3. What is the difference between React and Next.js?
+React	Next.js
+UI library	React framework
+Doesn't provide built-in file-based routing	Provides file-based routing
+Client-side rendering is common in traditional React setups	Supports server and client rendering strategies
+Requires additional tools for many application features	Integrates many application features
+SEO depends on the rendering approach and setup	Provides built-in support for SEO metadata and server rendering
+
+
+One important distinction: React itself supports server rendering APIs, too. Next.js provides an integrated framework around these capabilities.
+Q4. What is the App Router?
+The App Router is Next.js's routing system based on the app directory.
+
+For example:
+my-app/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── about/
+│   │   └── page.tsx
+│   └── products/
+│       └── page.tsx
+├── public/
+├── package.json
+└── tsconfig.json
+
+This creates the following routes:
+File	URL
+app/page.tsx	/
+app/about/page.tsx	/about
+app/products/page.tsx	/products
+
+
+Rule: A folder organizes a route segment, and a page.tsx file makes that route accessible.
